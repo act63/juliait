@@ -1,141 +1,378 @@
+```html
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Julia - ICDL Computer Essentials</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <style>
-    body { font-family: 'Segoe UI', system-ui, sans-serif; }
-    .module-content { display: none; }
-    .module-content.active { display: block; }
-    .nav-link { transition: all 0.2s; }
-    .nav-link.active { background-color: #164e63; color: white; border-left: 4px solid #67e8f9; }
-    
-    .flashcard {
-      perspective: 1000px;
-      cursor: pointer;
-    }
-    .flashcard-inner {
-      transition: transform 0.7s;
-      transform-style: preserve-3d;
-    }
-    .flashcard.flipped .flashcard-inner {
-      transform: rotateY(180deg);
-    }
-    .flashcard-front, .flashcard-back {
-      backface-visibility: hidden;
-      position: absolute;
-      inset: 0;
-    }
-    .flashcard-back {
-      transform: rotateY(180deg);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Julia - ICDL Computer Essentials</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+body{
+font-family:'Segoe UI',sans-serif;
+}
+
+.module-content{
+display:none;
+}
+
+.module-content.active{
+display:block;
+}
+
+.nav-link{
+transition:.2s;
+}
+
+.nav-link.active{
+background:#164e63;
+color:white;
+border-left:4px solid #67e8f9;
+}
+
+/* FLASHCARDS */
+
+.flashcard{
+position:relative;
+
+height:180px;
+
+cursor:pointer;
+
+perspective:1000px;
+}
+
+.flashcard-inner{
+
+position:relative;
+
+width:100%;
+height:100%;
+
+transform-style:preserve-3d;
+
+transition:transform .7s;
+
+}
+
+.flashcard.flipped .flashcard-inner{
+transform:rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back{
+
+position:absolute;
+
+inset:0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:20px;
+
+border-radius:18px;
+
+backface-visibility:hidden;
+
+-webkit-backface-visibility:hidden;
+
+}
+
+.flashcard-front{
+background:#1f2937;
+}
+
+.flashcard-back{
+
+background:#164e63;
+
+transform:rotateY(180deg);
+
+}
+
+</style>
+
 </head>
-<body class="bg-gray-950 text-gray-100 min-h-screen">
 
-  <div class="flex h-screen">
-    <div class="w-72 bg-gray-900 border-r border-gray-700 p-6 overflow-y-auto">
-      <h1 class="text-2xl font-bold text-cyan-400 mb-8">Julia's ICDL</h1>
-      <nav class="space-y-1">
-        <a href="#" onclick="showModule(0)" class="nav-link active block py-3 px-4 rounded-lg text-sm">🏠 Home</a>
-        <a href="#" onclick="showModule(1)" class="nav-link block py-3 px-4 rounded-lg text-sm">1. Computer e dispositivi</a>
-        <a href="#" onclick="showModule(2)" class="nav-link block py-3 px-4 rounded-lg text-sm">2. Desktop, icone, impostazioni</a>
-        <a href="#" onclick="showModule(3)" class="nav-link block py-3 px-4 rounded-lg text-sm">3. Testi e stampe</a>
-        <a href="#" onclick="showModule(4)" class="nav-link block py-3 px-4 rounded-lg text-sm">4. Gestione di file</a>
-        <a href="#" onclick="showModule(5)" class="nav-link block py-3 px-4 rounded-lg text-sm">5. Reti</a>
-        <a href="#" onclick="showModule(6)" class="nav-link block py-3 px-4 rounded-lg text-sm">6. Sicurezza e benessere</a>
-      </nav>
-    </div>
+<body class="bg-gray-950 text-gray-100">
 
-    <div class="flex-1 overflow-y-auto p-10">
-      <div class="max-w-3xl mx-auto">
+<div class="flex h-screen">
 
-        <div id="module-0" class="module-content active">
-          <h1 class="text-4xl font-bold mb-4">Ciao Julia 👋</h1>
-          <p class="text-cyan-400 text-xl">ICDL Computer Essentials</p>
-          <p class="mt-6 text-gray-300">Clicca sui moduli a sinistra e usa le flashcards per ripassare.</p>
-        </div>
+<!-- SIDEBAR -->
 
-        <!-- Module 1 -->
-        <div id="module-1" class="module-content">
-          <h2 class="text-3xl font-bold mb-6">1. Computer e dispositivi</h2>
-          <div class="prose prose-invert mb-10">... (content) ...</div>
-          <h3 class="text-xl font-bold mb-4">Flashcards</h3>
-          <div id="flashcards-1" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-        </div>
+<div class="w-72 bg-gray-900 border-r border-gray-700 p-6">
 
-        <!-- Repeat similar structure for other modules (shortened for brevity) -->
-        <!-- ... same pattern for 2 to 6 ... -->
+<h1 class="text-2xl font-bold text-cyan-400 mb-8">
+Julia's ICDL
+</h1>
 
-        <div id="module-6" class="module-content">
-          <h2 class="text-3xl font-bold mb-6">6. Sicurezza e benessere</h2>
-          <div class="prose prose-invert mb-10">
-            <p>Password forti, firewall, backup, malware, salute, informatica verde, accessibilità.</p>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Flashcards</h3>
-          <div id="flashcards-6" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-        </div>
+<nav class="space-y-2">
 
-      </div>
-    </div>
-  </div>
+<a href="#"
+onclick="showModule(0)"
+class="nav-link active block p-3 rounded">
 
-  <script>
-    function showModule(n) {
-      document.querySelectorAll('.module-content').forEach(el => el.classList.remove('active'));
-      document.getElementById('module-' + n).classList.add('active');
+🏠 Home
 
-      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-      document.querySelectorAll('.nav-link')[n].classList.add('active');
-    }
+</a>
 
-    const allFlashcards = {
-      1: [
-        {q: "Cosa significa ICT?", a: "Tecnologie dell’Informazione e della Comunicazione"},
-        {q: "Cos'è la RAM?", a: "Memoria temporanea (si cancella quando spegni)"},
-        {q: "Cos'è l'hardware?", a: "Le parti fisiche del computer"},
-      ],
-      2: [
-        {q: "A cosa serve Esc?", a: "Interrompere operazioni"},
-        {q: "Come si cattura lo schermo?", a: "Tasto Print Screen"},
-      ],
-      6: [
-        {q: "Cosa sono i malware?", a: "Virus, worm, trojan, spyware"},
-        {q: "Cosa significa backup?", a: "Copia di sicurezza dei dati"},
-        {q: "Cos'è un firewall?", a: "Protezione contro accessi non autorizzati"},
-      ]
-      // Add more if you want
-    };
+<a href="#"
+onclick="showModule(1)"
+class="nav-link block p-3 rounded">
 
-    function createFlashcards() {
-      Object.keys(allFlashcards).forEach(mod => {
-        const container = document.getElementById(`flashcards-${mod}`);
-        if (!container) return;
-        container.innerHTML = '';
-        
-        allFlashcards[mod].forEach(card => {
-          const div = document.createElement('div');
-          div.className = "flashcard bg-gray-800 border border-gray-700 rounded-2xl p-6 hover:border-cyan-500";
-          div.innerHTML = `
-            <div class="flashcard-inner h-44 relative">
-              <div class="flashcard-front absolute inset-0 flex items-center justify-center bg-gray-800 rounded-2xl p-6 text-center">
-                <p>${card.q}</p>
-              </div>
-              <div class="flashcard-back absolute inset-0 flex items-center justify-center bg-cyan-900 rounded-2xl p-6 text-center">
-                <p class="text-cyan-100">${card.a}</p>
-              </div>
-            </div>
-          `;
-          div.addEventListener('click', () => div.classList.toggle('flipped'));
-          container.appendChild(div);
-        });
-      });
-    }
+1. Computer e dispositivi
 
-    window.onload = createFlashcards;
-  </script>
+</a>
+
+<a href="#"
+onclick="showModule(6)"
+class="nav-link block p-3 rounded">
+
+6. Sicurezza
+
+</a>
+
+</nav>
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="flex-1 p-10 overflow-auto">
+
+<div class="max-w-4xl mx-auto">
+
+<div
+id="module-0"
+class="module-content active">
+
+<h1 class="text-5xl font-bold mb-4">
+
+Ciao Julia 👋
+
+</h1>
+
+<p class="text-cyan-400">
+
+ICDL Computer Essentials
+
+</p>
+
+</div>
+
+<!-- MODULE 1 -->
+
+<div
+id="module-1"
+class="module-content">
+
+<h2 class="text-3xl font-bold mb-6">
+
+Computer e dispositivi
+
+</h2>
+
+<div class="grid gap-5">
+
+<div
+class="flashcard border border-gray-700 rounded-xl">
+
+<div class="flashcard-inner">
+
+<div class="flashcard-front">
+
+Cos'è ICT?
+
+</div>
+
+<div class="flashcard-back">
+
+Tecnologie dell’Informazione e Comunicazione
+
+</div>
+
+</div>
+
+</div>
+
+<div
+class="flashcard border border-gray-700 rounded-xl">
+
+<div class="flashcard-inner">
+
+<div class="flashcard-front">
+
+Cos'è RAM?
+
+</div>
+
+<div class="flashcard-back">
+
+Memoria temporanea
+
+</div>
+
+</div>
+
+</div>
+
+<div
+class="flashcard border border-gray-700 rounded-xl">
+
+<div class="flashcard-inner">
+
+<div class="flashcard-front">
+
+Cos'è Hardware?
+
+</div>
+
+<div class="flashcard-back">
+
+Componenti fisici del computer
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MODULE 6 -->
+
+<div
+id="module-6"
+class="module-content">
+
+<h2 class="text-3xl font-bold mb-6">
+
+Sicurezza
+
+</h2>
+
+<div class="grid gap-5">
+
+<div
+class="flashcard border border-gray-700 rounded-xl">
+
+<div class="flashcard-inner">
+
+<div class="flashcard-front">
+
+Cos'è un firewall?
+
+</div>
+
+<div class="flashcard-back">
+
+Blocca accessi non autorizzati
+
+</div>
+
+</div>
+
+</div>
+
+<div
+class="flashcard border border-gray-700 rounded-xl">
+
+<div class="flashcard-inner">
+
+<div class="flashcard-front">
+
+Cos'è backup?
+
+</div>
+
+<div class="flashcard-back">
+
+Copia di sicurezza
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function showModule(n){
+
+document
+.querySelectorAll(".module-content")
+.forEach(el=>
+el.classList.remove("active"));
+
+document
+.getElementById(
+"module-"+n
+)
+.classList.add(
+"active"
+);
+
+document
+.querySelectorAll(".nav-link")
+.forEach(el=>
+el.classList.remove(
+"active"
+));
+
+document
+.querySelectorAll(".nav-link")[n]
+.classList.add(
+"active"
+);
+
+}
+
+document
+.querySelectorAll(
+".flashcard"
+)
+.forEach(card=>{
+
+card
+.addEventListener(
+"click",
+()=>{
+
+card
+.classList
+.toggle(
+"flipped"
+);
+
+});
+
+});
+
+</script>
+
 </body>
+
 </html>
+```
