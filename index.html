@@ -12,7 +12,6 @@
     .module-content.active { display: block; }
     .nav-link { transition: all 0.2s; }
     .nav-link.active { background-color: #164e63; color: white; border-left: 4px solid #67e8f9; }
-    .prose li { margin-bottom: 0.35rem; }
   </style>
 </head>
 <body class="bg-gray-950 text-gray-100 min-h-screen">
@@ -40,102 +39,60 @@
         <div id="module-0" class="module-content active">
           <h1 class="text-4xl font-bold mb-4">Ciao Julia 👋</h1>
           <p class="text-cyan-400 text-xl">ICDL Computer Essentials</p>
-          <p class="mt-8 text-gray-300">Tutto il materiale principale del manuale è qui, organizzato per modulo.</p>
+          <p class="mt-8 text-gray-300">Materiale organizzato dal manuale. Studia un modulo alla volta.</p>
         </div>
 
         <div id="module-1" class="module-content">
           <h2 class="text-3xl font-bold mb-6">1. Computer e dispositivi</h2>
-          <div class="prose prose-invert">
-            <h3>1.1 ICT</h3>
-            <p>Tecnologie dell’Informazione e della Comunicazione. Permettono di archiviare, elaborare e trasmettere informazioni.</p>
-            <p>Servizi principali: e-commerce, e-banking, e-government, e-learning, smart working, tecnologie mobili, applicazioni di produttività.</p>
-
-            <h3>1.2 Hardware</h3>
-            <ul>
-              <li>Tipi di computer: desktop, laptop (portatile), tablet</li>
-              <li>Dispositivi: smartphone, lettori multimediali, fotocamere digitali</li>
-              <li>Processore (CPU): esegue i calcoli, velocità in GHz</li>
-              <li>RAM: memoria temporanea (volatile) – influisce sulle prestazioni</li>
-              <li>Memoria di massa: disco fisso, USB, schede memoria, CD/DVD, cloud</li>
-              <li>Periferiche: stampanti (laser, inkjet), schermi (LCD/LED, touchscreen), scanner, tastiera (QWERTY), mouse, trackpad, webcam, altoparlanti, microfono, docking station</li>
-              <li>Porte: USB, HDMI, Ethernet, FireWire, seriale, parallela</li>
-            </ul>
-
-            <h3>1.3 Software e licenze</h3>
-            <ul>
-              <li>Software: sistemi operativi (Windows, macOS, Linux, Android, iOS) e applicazioni</li>
-              <li>Tipi di licenze: proprietaria, open source, freeware, shareware, trial</li>
-              <li>EULA: contratto con l’utente finale</li>
-            </ul>
-
-            <h3>1.4 Avvio e spegnimento</h3>
-            <p>Accensione con account Microsoft, login con password, spegnimento, riavvio, disconnessione.</p>
+          <div class="prose prose-invert space-y-6">
+            <div>
+              <h3 class="font-semibold">1.1 ICT</h3>
+              <p>Tecnologie dell’Informazione e della Comunicazione.<br>Esempi: e-commerce, e-banking, e-government, e-learning, smart working.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold">1.2 Hardware</h3>
+              <ul>
+                <li>Desktop, Laptop, Tablet</li>
+                <li>Processore (CPU), RAM, Memoria di massa</li>
+                <li>Periferiche: tastiera, mouse, stampante, schermo, scanner, webcam, altoparlanti, microfono</li>
+                <li>Porte: USB, HDMI, Ethernet</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div id="module-2" class="module-content">
           <h2 class="text-3xl font-bold mb-6">2. Desktop, icone, impostazioni</h2>
           <div class="prose prose-invert">
-            <ul>
-              <li>Scopo del desktop e della barra delle applicazioni</li>
-              <li>Gestione icone: selezionare, spostare, creare collegamenti</li>
-              <li>Gestione finestre: aprire, minimizzare, massimizzare, ridimensionare, chiudere, passare da una all’altra</li>
-              <li>Impostazioni: data/ora, volume, sfondo, risoluzione, lingue tastiera</li>
-              <li>Chiudere programmi bloccati, installare/disinstallare app</li>
-              <li>Collegare dispositivi USB in sicurezza</li>
-              <li>Catturare schermo</li>
-            </ul>
+            <p>Desktop, barra delle applicazioni, gestione icone e finestre, impostazioni di sistema, installazione/disinstallazione programmi, collegamento dispositivi USB.</p>
           </div>
         </div>
 
         <div id="module-3" class="module-content">
           <h2 class="text-3xl font-bold mb-6">3. Testi e stampe</h2>
           <div class="prose prose-invert">
-            <ul>
-              <li>Usare applicazioni di elaborazione testi: aprire, inserire testo, copiare/spostare, incollare immagine schermo, salvare</li>
-              <li>Gestione stampanti: installare, impostare predefinita, stampare, gestire coda di stampa</li>
-            </ul>
+            <p>Elaborazione testi (scrivere, copiare, salvare), installazione stampante, stampa documenti, gestione coda di stampa.</p>
           </div>
         </div>
 
         <div id="module-4" class="module-content">
           <h2 class="text-3xl font-bold mb-6">4. Gestione di file</h2>
           <div class="prose prose-invert">
-            <ul>
-              <li>Struttura gerarchica: unità → cartelle → file</li>
-              <li>Creare, rinominare, copiare, spostare, eliminare file/cartelle</li>
-              <li>Visualizzare proprietà, cambiare visualizzazione (icone, lista, dettagli)</li>
-              <li>Tipi di file comuni (.txt, .docx, .xlsx, .pdf, .jpg, .zip, ecc.)</li>
-              <li>Ricerca file per nome, contenuto, data</li>
-              <li>Comprimere ed estrarre file</li>
-              <li>Supporti di memoria: KB, MB, GB, TB</li>
-            </ul>
+            <p>Struttura gerarchica di file e cartelle, creare/rinominare/copiare/spostare/eliminate, ricerca file, compressione, tipi di memoria.</p>
           </div>
         </div>
 
         <div id="module-5" class="module-content">
           <h2 class="text-3xl font-bold mb-6">5. Reti</h2>
           <div class="prose prose-invert">
-            <ul>
-              <li>Concetto di rete: condividere dati e dispositivi in sicurezza</li>
-              <li>Internet, intranet, VPN</li>
-              <li>Connessioni: linea telefonica, mobile, cavo, Wi-Fi, satellite</li>
-              <li>ISP (provider), velocità di download/upload</li>
-              <li>Reti wireless protette vs aperte</li>
-            </ul>
+            <p>Rete, Internet, Wi-Fi, provider, velocità di trasferimento, reti protette vs aperte.</p>
           </div>
         </div>
 
         <div id="module-6" class="module-content">
           <h2 class="text-3xl font-bold mb-6">6. Sicurezza e benessere</h2>
           <div class="prose prose-invert">
-            <ul>
-              <li>Password forti, firewall, aggiornamenti software, backup</li>
-              <li>Malware: virus, worm, trojan, spyware – usare antivirus</li>
-              <li>Salute: pause regolari, postura corretta, illuminazione giusta</li>
-              <li>Informatica verde: risparmio energetico, riciclo</li>
-              <li>Accessibilità: zoom, screen reader, contrasto elevato</li>
-            </ul>
+            <p>Password sicure, firewall, backup, malware, salute (postura, pause), informatica verde, accessibilità.</p>
           </div>
         </div>
 
