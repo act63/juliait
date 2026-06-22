@@ -1,10 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Julia's ICDL</title>
+<title>Julia - ICDL Computer Essentials</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 
@@ -27,80 +27,105 @@ background:#164e63;
 border-left:4px solid #67e8f9;
 }
 
-.flash{
+.flashcards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:16px;
 margin-top:20px;
 }
 
 .card{
 background:#111827;
-border:1px solid #374151;
-
-padding:20px;
-
+padding:18px;
 border-radius:16px;
+border:1px solid #374151;
+}
+
+.card strong{
+color:#67e8f9;
+}
+
+.box{
+background:#111827;
+padding:18px;
+border-radius:16px;
+margin-top:18px;
 }
 
 </style>
 
 </head>
 
-<body class="bg-gray-950 text-white">
+<body class="bg-gray-950 text-gray-100">
 
 <div class="flex min-h-screen">
 
-<!-- sidebar -->
+<!-- SIDEBAR -->
 
 <div class="w-72 bg-gray-900 p-6">
 
-<h1 class="text-cyan-400 text-3xl mb-10">
+<h1 class="text-3xl font-bold text-cyan-400 mb-10">
+
 Julia's ICDL
+
 </h1>
 
 <div class="space-y-2">
 
-<button onclick="openModule(0)"
-class="nav active w-full text-left p-3 rounded">
+<button onclick="openM(0)"
+class="nav active p-3 rounded w-full text-left">
+
 🏠 Home
+
 </button>
 
-<button onclick="openModule(1)"
-class="nav w-full text-left p-3 rounded">
+<button onclick="openM(1)"
+class="nav p-3 rounded w-full text-left">
+
 1. Computer
+
 </button>
 
-<button onclick="openModule(2)"
-class="nav w-full text-left p-3 rounded">
+<button onclick="openM(2)"
+class="nav p-3 rounded w-full text-left">
+
 2. Desktop
+
 </button>
 
-<button onclick="openModule(3)"
-class="nav w-full text-left p-3 rounded">
+<button onclick="openM(3)"
+class="nav p-3 rounded w-full text-left">
+
 3. Testi
+
 </button>
 
-<button onclick="openModule(4)"
-class="nav w-full text-left p-3 rounded">
+<button onclick="openM(4)"
+class="nav p-3 rounded w-full text-left">
+
 4. File
+
 </button>
 
-<button onclick="openModule(5)"
-class="nav w-full text-left p-3 rounded">
+<button onclick="openM(5)"
+class="nav p-3 rounded w-full text-left">
+
 5. Reti
+
 </button>
 
-<button onclick="openModule(6)"
-class="nav w-full text-left p-3 rounded">
+<button onclick="openM(6)"
+class="nav p-3 rounded w-full text-left">
+
 6. Sicurezza
+
 </button>
 
 </div>
 
 </div>
 
-<!-- content -->
+<!-- CONTENT -->
 
 <div class="flex-1 p-10">
 
@@ -110,11 +135,19 @@ class="nav w-full text-left p-3 rounded">
 Ciao Julia 👋
 </h1>
 
-<p>
+<p class="text-cyan-400 text-xl">
 ICDL Computer Essentials
 </p>
 
+<div class="box">
+
+Studia modulo → leggi → ripassa flashcards.
+
 </div>
+
+</div>
+
+<!-- MODULE 1 -->
 
 <div id="m1" class="module">
 
@@ -122,95 +155,185 @@ ICDL Computer Essentials
 Computer e dispositivi
 </h2>
 
+<div class="box">
+
 <ul class="list-disc ml-6">
 
-<li>Hardware → parti fisiche</li>
-
-<li>Software → programmi</li>
-
-<li>CPU → processore</li>
-
-<li>RAM → memoria temporanea</li>
-
-<li>SSD → memoria permanente</li>
+<li>Hardware = parti fisiche</li>
+<li>Software = programmi</li>
+<li>CPU = processore</li>
+<li>RAM = memoria temporanea</li>
+<li>SSD = archiviazione</li>
 
 </ul>
 
-<div class="flash">
+</div>
+
+<div class="flashcards">
 
 <div class="card">
-
 <strong>CPU</strong>
-
-<p>Unità centrale di elaborazione</p>
-
+<p>Elabora istruzioni</p>
 </div>
 
 <div class="card">
-
 <strong>RAM</strong>
-
 <p>Memoria veloce temporanea</p>
+</div>
 
+<div class="card">
+<strong>SSD</strong>
+<p>Memoria permanente</p>
 </div>
 
 </div>
 
 </div>
+
+<!-- MODULE 2 -->
 
 <div id="m2" class="module">
 
 <h2 class="text-4xl mb-6">
-Desktop, icone, impostazioni
+Desktop
 </h2>
 
-<p>
-Desktop • finestre • installare programmi • USB
-</p>
+<div class="box">
+
+<ul class="list-disc ml-6">
+
+<li>Desktop</li>
+<li>Finestre</li>
+<li>Impostazioni</li>
+<li>Installazione software</li>
+
+</ul>
 
 </div>
+
+<div class="flashcards">
+
+<div class="card">
+<strong>Desktop</strong>
+<p>Area principale</p>
+</div>
+
+<div class="card">
+<strong>USB</strong>
+<p>Connette dispositivi</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- MODULE 3 -->
 
 <div id="m3" class="module">
 
 <h2 class="text-4xl mb-6">
+
 Testi e stampe
+
 </h2>
 
-<p>
-Creare • salvare • stampare documenti
-</p>
+<div class="flashcards">
+
+<div class="card">
+
+<strong>Salva</strong>
+
+<p>Memorizza documento</p>
 
 </div>
+
+<div class="card">
+
+<strong>Stampa</strong>
+
+<p>Invia alla stampante</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MODULE 4 -->
 
 <div id="m4" class="module">
 
 <h2 class="text-4xl mb-6">
+
 Gestione file
+
 </h2>
 
-<p>
-Cartelle • rinominare • eliminare • ricerca
-</p>
+<div class="flashcards">
+
+<div class="card">
+
+<strong>Cartella</strong>
+
+<p>Contiene file</p>
 
 </div>
+
+<div class="card">
+
+<strong>Compressione</strong>
+
+<p>Riduce dimensioni</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MODULE 5 -->
 
 <div id="m5" class="module">
 
 <h2 class="text-4xl mb-6">
+
 Reti
+
 </h2>
 
-<p>
-Internet • Wi-Fi • Provider
-</p>
+<div class="flashcards">
+
+<div class="card">
+
+<strong>Wi-Fi</strong>
+
+<p>Connessione wireless</p>
 
 </div>
+
+<div class="card">
+
+<strong>Provider</strong>
+
+<p>Fornisce Internet</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MODULE 6 -->
 
 <div id="m6" class="module">
 
 <h2 class="text-4xl mb-6">
+
 Sicurezza
+
 </h2>
+
+<div class="box">
 
 <ul class="list-disc ml-6">
 
@@ -222,7 +345,39 @@ Sicurezza
 
 <li>Phishing</li>
 
+<li>Aggiornamenti</li>
+
 </ul>
+
+</div>
+
+<div class="flashcards">
+
+<div class="card">
+
+<strong>Firewall</strong>
+
+<p>Protegge rete</p>
+
+</div>
+
+<div class="card">
+
+<strong>Backup</strong>
+
+<p>Copia dati</p>
+
+</div>
+
+<div class="card">
+
+<strong>Malware</strong>
+
+<p>Software dannoso</p>
+
+</div>
+
+</div>
 
 </div>
 
@@ -232,27 +387,32 @@ Sicurezza
 
 <script>
 
-function openModule(n){
+function openM(n){
 
 document
 .querySelectorAll(".module")
-.forEach(x=>
-x.classList.remove("active")
+.forEach(
+x=>x.classList.remove("active")
 );
 
 document
 .querySelectorAll(".nav")
-.forEach(x=>
-x.classList.remove("active")
+.forEach(
+x=>x.classList.remove("active")
 );
 
 document
-.getElementById("m"+n)
-.classList.add("active");
+.getElementById(
+"m"+n
+).classList.add(
+"active"
+);
 
 document
 .querySelectorAll(".nav")[n]
-.classList.add("active");
+.classList.add(
+"active"
+);
 
 }
 
@@ -260,3 +420,4 @@ document
 
 </body>
 </html>
+```
