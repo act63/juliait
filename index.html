@@ -33,6 +33,7 @@
       justify-content: center;
       text-align: center;
       padding: 1.5rem;
+      border-radius: 16px;
     }
     .flashcard-back {
       transform: rotateY(180deg);
@@ -63,7 +64,7 @@
         <div id="module-0" class="module-content active">
           <h1 class="text-4xl font-bold mb-4">Ciao Julia 👋</h1>
           <p class="text-cyan-400 text-xl">ICDL Computer Essentials</p>
-          <p class="mt-8 text-gray-300">Tutto il materiale principale + flashcards + mini quiz finale.</p>
+          <p class="mt-8 text-gray-300">Materiale completo e aggiornato per prepararti all'esame.</p>
         </div>
 
         <!-- Module 1 -->
@@ -72,15 +73,18 @@
           <div class="prose prose-invert space-y-6">
             <div>
               <h3>1.1 ICT</h3>
-              <p>Tecnologie dell’Informazione e della Comunicazione. Esempi: commercio elettronico, e-banking, e-government, e-learning, smart working.</p>
+              <p>Tecnologie dell’Informazione e della Comunicazione. Servono per archiviare, elaborare e trasmettere informazioni. Esempi: e-commerce, e-banking, e-government, e-learning, smart working.</p>
             </div>
             <div>
               <h3>1.2 Hardware</h3>
               <ul>
-                <li>Tipi di computer: desktop, laptop, tablet</li>
-                <li>Processore (CPU), RAM (volatile), Memoria di massa (permanente)</li>
+                <li>Tipi di computer: desktop, laptop (portatile), tablet</li>
+                <li>Dispositivi: smartphone, lettori multimediali, fotocamere digitali</li>
+                <li>Processore (CPU): esegue i calcoli, velocità in GHz</li>
+                <li>RAM: memoria temporanea (volatile) – più RAM = prestazioni migliori</li>
+                <li>Memoria di massa: disco fisso, USB, schede di memoria, CD/DVD (permanente)</li>
                 <li>Periferiche: stampanti, schermi, scanner, tastiera, mouse, webcam, altoparlanti, microfono</li>
-                <li>Porte: USB, HDMI, Ethernet</li>
+                <li>Porte: USB, HDMI, Ethernet, FireWire</li>
               </ul>
             </div>
           </div>
@@ -88,56 +92,80 @@
           <div id="flashcards-1" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </div>
 
-        <!-- Module 2 to 6 (similar structure) -->
+        <!-- Module 2 -->
         <div id="module-2" class="module-content">
           <h2 class="text-3xl font-bold mb-6">2. Desktop, icone, impostazioni</h2>
-          <div class="prose prose-invert">
-            <p>Gestione desktop, icone, finestre, impostazioni di base, installazione programmi, collegamento dispositivi USB.</p>
+          <div class="prose prose-invert space-y-6">
+            <p>Il desktop è l'area di lavoro principale. La barra delle applicazioni permette di lanciare programmi rapidamente.</p>
+            <ul>
+              <li>Gestire icone e collegamenti</li>
+              <li>Usare e ridimensionare finestre</li>
+              <li>Modificare data/ora, volume, sfondo, risoluzione</li>
+              <li>Installare/disinstallare applicazioni</li>
+              <li>Collegare dispositivi USB in sicurezza</li>
+            </ul>
           </div>
           <h3 class="text-xl font-bold mt-10 mb-4">Flashcards - Modulo 2</h3>
           <div id="flashcards-2" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </div>
 
+        <!-- Module 3 -->
         <div id="module-3" class="module-content">
           <h2 class="text-3xl font-bold mb-6">3. Testi e stampe</h2>
-          <div class="prose prose-invert">
-            <p>Elaborazione testi, copia/incolla, salvataggio, gestione stampanti e stampa documenti.</p>
+          <div class="prose prose-invert space-y-6">
+            <p>Usare applicazioni di elaborazione testi (aprire, scrivere, copiare, incollare, salvare).</p>
+            <p>Gestire stampanti: installare, impostare come predefinita, stampare documenti, gestire la coda di stampa.</p>
           </div>
           <h3 class="text-xl font-bold mt-10 mb-4">Flashcards - Modulo 3</h3>
           <div id="flashcards-3" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </div>
 
+        <!-- Module 4 -->
         <div id="module-4" class="module-content">
           <h2 class="text-3xl font-bold mb-6">4. Gestione di file</h2>
-          <div class="prose prose-invert">
-            <p>Struttura gerarchica, creare/rinominare/copiare/spostare/eliminate file, compressione, ricerca.</p>
+          <div class="prose prose-invert space-y-6">
+            <p>Struttura gerarchica: unità → cartelle → file.</p>
+            <ul>
+              <li>Creare, rinominare, copiare, spostare, eliminare file e cartelle</li>
+              <li>Cercare file per nome o contenuto</li>
+              <li>Comprimere ed estrarre file (.zip)</li>
+              <li>Tipi di supporto: disco fisso, USB, cloud</li>
+            </ul>
           </div>
           <h3 class="text-xl font-bold mt-10 mb-4">Flashcards - Modulo 4</h3>
           <div id="flashcards-4" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </div>
 
+        <!-- Module 5 -->
         <div id="module-5" class="module-content">
           <h2 class="text-3xl font-bold mb-6">5. Reti</h2>
-          <div class="prose prose-invert">
-            <p>Rete, Internet, Wi-Fi, ISP, velocità di trasferimento, reti protette.</p>
+          <div class="prose prose-invert space-y-6">
+            <p>Una rete permette di condividere dati e dispositivi.</p>
+            <ul>
+              <li>Internet, intranet, VPN</li>
+              <li>Connessioni: Wi-Fi, cavo, mobile</li>
+              <li>ISP (fornitore di connessione)</li>
+              <li>Velocità: download e upload (Mbps, Gbps)</li>
+            </ul>
           </div>
           <h3 class="text-xl font-bold mt-10 mb-4">Flashcards - Modulo 5</h3>
           <div id="flashcards-5" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </div>
 
+        <!-- Module 6 -->
         <div id="module-6" class="module-content">
           <h2 class="text-3xl font-bold mb-6">6. Sicurezza e benessere</h2>
-          <div class="prose prose-invert">
-            <p>Password sicure, firewall, backup, malware, salute, informatica verde, accessibilità.</p>
+          <div class="prose prose-invert space-y-6">
+            <ul>
+              <li>Password forti, firewall, aggiornamenti regolari, backup</li>
+              <li>Malware: virus, worm, trojan, spyware</li>
+              <li>Salute: pause, postura corretta, illuminazione</li>
+              <li>Informatica verde: risparmio energetico, riciclo</li>
+              <li>Accessibilità: zoom, screen reader, contrasto elevato</li>
+            </ul>
           </div>
           <h3 class="text-xl font-bold mt-10 mb-4">Flashcards - Modulo 6</h3>
           <div id="flashcards-6" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-        </div>
-
-        <!-- Mini Quiz -->
-        <div id="module-quiz" class="module-content">
-          <h2 class="text-3xl font-bold mb-8">Mini Quiz Finale</h2>
-          <div id="quiz-container" class="space-y-8"></div>
         </div>
 
       </div>
@@ -150,34 +178,35 @@
       document.getElementById('module-' + n).classList.add('active');
 
       document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-      const links = document.querySelectorAll('.nav-link');
-      if (n < links.length) links[n].classList.add('active');
+      document.querySelectorAll('.nav-link')[n].classList.add('active');
     }
 
-    // Flashcards
     const flashcardsData = {
       1: [
         {q: "Cosa significa ICT?", a: "Tecnologie dell’Informazione e della Comunicazione"},
-        {q: "Cos'è la RAM?", a: "Memoria temporanea (volatile)"},
+        {q: "Cos'è la RAM?", a: "Memoria temporanea volatile del computer"},
         {q: "Cos'è l'hardware?", a: "Le parti fisiche del computer"},
       ],
       2: [
-        {q: "A cosa serve il tasto Esc?", a: "Interrompere un'operazione"},
-        {q: "Come si cattura lo schermo?", a: "Tasto Print Screen"},
+        {q: "A cosa serve il tasto Esc?", a: "Interrompere un'operazione o annullare una scelta"},
+        {q: "Come si chiude un programma bloccato?", a: "Dal Task Manager"},
       ],
       3: [
         {q: "Come si salva un documento?", a: "File → Salva con nome"},
+        {q: "Come si imposta una stampante predefinita?", a: "Nelle impostazioni di Windows"},
       ],
       4: [
-        {q: "Cos'è un file compresso?", a: "File .zip"},
-        {q: "Come si organizza i file?", a: "In cartelle e sottocartelle"},
+        {q: "Cosa significa struttura gerarchica?", a: "Unità → Cartelle → Sottocartelle → File"},
+        {q: "Cos'è un file compresso?", a: "Un file .zip"},
       ],
       5: [
-        {q: "Cos'è un ISP?", a: "Internet Service Provider"},
+        {q: "Cos'è un ISP?", a: "Internet Service Provider (fornitore Internet)"},
+        {q: "Cosa significa Wi-Fi protetto?", a: "Rete che richiede password"},
       ],
       6: [
         {q: "Cosa sono i malware?", a: "Virus, worm, trojan, spyware"},
-        {q: "Cos'è un backup?", a: "Copia di sicurezza dei dati"},
+        {q: "Cos'è il backup?", a: "Copia di sicurezza dei dati"},
+        {q: "Cosa fa un firewall?", a: "Proteggere da accessi non autorizzati"},
       ]
     };
 
@@ -188,11 +217,11 @@
         container.innerHTML = '';
         flashcardsData[mod].forEach(card => {
           const div = document.createElement('div');
-          div.className = 'flashcard bg-gray-800 border border-gray-700 rounded-2xl p-6';
+          div.className = 'flashcard bg-gray-800 border border-gray-700 rounded-2xl p-6 hover:border-cyan-500';
           div.innerHTML = `
             <div class="flashcard-inner h-48 relative">
-              <div class="flashcard-front bg-gray-800 rounded-2xl">${card.q}</div>
-              <div class="flashcard-back bg-cyan-900 rounded-2xl text-cyan-100">${card.a}</div>
+              <div class="flashcard-front bg-gray-800">${card.q}</div>
+              <div class="flashcard-back bg-cyan-900 text-cyan-100">${card.a}</div>
             </div>
           `;
           div.addEventListener('click', () => div.classList.toggle('flipped'));
