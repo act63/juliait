@@ -12,6 +12,7 @@
     .module-content.active { display: block; }
     .nav-link { transition: all 0.2s; }
     .nav-link.active { background-color: #164e63; color: white; border-left: 4px solid #67e8f9; }
+    .prose h3 { margin-top: 1.5rem; font-size: 1.25rem; }
   </style>
 </head>
 <body class="bg-gray-950 text-gray-100 min-h-screen">
@@ -38,50 +39,90 @@
 
         <div id="module-0" class="module-content active">
           <h1 class="text-4xl font-bold mb-4">Ciao Julia 👋</h1>
-          <p class="text-cyan-400 text-xl">ICDL Computer Essentials Study Site</p>
-          <p class="mt-8 text-gray-300 text-lg">Clicca sui moduli a sinistra per studiare uno alla volta.</p>
+          <p class="text-cyan-400 text-xl">ICDL Computer Essentials</p>
+          <p class="mt-8 text-gray-300">Studia un modulo alla volta. Tutto il materiale del PDF è qui organizzato.</p>
         </div>
 
+        <!-- Module 1 -->
         <div id="module-1" class="module-content">
           <h2 class="text-3xl font-bold mb-6">1. Computer e dispositivi</h2>
           <div class="prose prose-invert">
-            <h3>ICT</h3>
-            <p>Tecnologie dell’Informazione e della Comunicazione. Esempi: e-commerce, e-banking, e-learning, smart working.</p>
-            
-            <h3>Hardware</h3>
+            <h3>1.1 ICT</h3>
+            <p><strong>Information and Communication Technology</strong> – Tecnologie dell’Informazione e della Comunicazione.</p>
+            <p>Esempi: e-commerce, e-banking, e-government, e-learning, smart working.</p>
+
+            <h3>1.2 Hardware</h3>
             <ul>
-              <li>Tipi di computer: desktop, laptop, tablet</li>
-              <li>Dispositivi: smartphone, lettori multimediali, fotocamere</li>
-              <li>Componenti: Processore (CPU), RAM, Memoria di massa</li>
-              <li>Periferiche: tastiera, mouse, stampante, schermo, scanner, webcam...</li>
-              <li>Porte comuni: USB, HDMI, Ethernet</li>
+              <li><strong>Tipi di computer</strong>: desktop, laptop (portatile), tablet</li>
+              <li><strong>Dispositivi</strong>: smartphone, lettori multimediali, fotocamere digitali</li>
+              <li><strong>Componenti principali</strong>: Processore (CPU), RAM (memoria volatile), Memoria di massa (disco fisso, USB, ecc.)</li>
+              <li><strong>Periferiche</strong>: stampanti, schermi, scanner, tastiera, mouse, webcam, altoparlanti, microfono</li>
+              <li><strong>Porte comuni</strong>: USB, HDMI, Ethernet, FireWire</li>
             </ul>
           </div>
         </div>
 
+        <!-- Module 2 -->
         <div id="module-2" class="module-content">
           <h2 class="text-3xl font-bold mb-6">2. Desktop, icone, impostazioni</h2>
-          <p class="text-gray-300">Desktop, barra delle applicazioni, gestione finestre, icone, impostazioni di base (data, volume, risoluzione, lingue, installazione programmi).</p>
+          <div class="prose prose-invert">
+            <p>Scopo del desktop e della barra delle applicazioni.</p>
+            <ul>
+              <li>Gestione icone (selezionare, spostare, creare collegamenti)</li>
+              <li>Uso delle finestre (ridurre, massimizzare, chiudere, passare da una all’altra)</li>
+              <li>Impostazioni: data/ora, volume, sfondo, risoluzione, lingue tastiera</li>
+              <li>Installare/disinstallare applicazioni, collegare dispositivi USB</li>
+            </ul>
+          </div>
         </div>
 
+        <!-- Module 3 -->
         <div id="module-3" class="module-content">
           <h2 class="text-3xl font-bold mb-6">3. Testi e stampe</h2>
-          <p class="text-gray-300">Elaborazione testi, copia/incolla, salvataggio, installazione stampanti, stampa documenti.</p>
+          <div class="prose prose-invert">
+            <p>Uso di applicazioni di elaborazione testi (aprire, inserire testo, copiare/incollare, salvare).</p>
+            <p>Gestione stampanti: installare, impostare predefinita, stampare documenti, gestire coda di stampa.</p>
+          </div>
         </div>
 
+        <!-- Module 4 -->
         <div id="module-4" class="module-content">
           <h2 class="text-3xl font-bold mb-6">4. Gestione di file</h2>
-          <p class="text-gray-300">File e cartelle, organizzazione, copia/spostamento, eliminazione, compressione, tipi di memoria.</p>
+          <div class="prose prose-invert">
+            <p>Struttura gerarchica di file e cartelle.</p>
+            <ul>
+              <li>Creare, rinominare, copiare, spostare, eliminare file/cartelle</li>
+              <li>Tipi di file comuni (testo, foglio elettronico, PDF, immagine, ecc.)</li>
+              <li>Ricerca file, visualizzazione (icone, lista, dettagli)</li>
+              <li>Compressione ed estrazione di file</li>
+            </ul>
+          </div>
         </div>
 
+        <!-- Module 5 -->
         <div id="module-5" class="module-content">
           <h2 class="text-3xl font-bold mb-6">5. Reti</h2>
-          <p class="text-gray-300">Concetti di rete, Internet, Wi-Fi, provider, velocità di trasferimento.</p>
+          <div class="prose prose-invert">
+            <p>Concetti di rete, Internet, intranet, VPN.</p>
+            <ul>
+              <li>Connessioni: Wi-Fi, cavo, mobile, satellite</li>
+              <li>Provider (ISP), velocità (bps, Mbps, Gbps)</li>
+              <li>Scaricamento e caricamento</li>
+            </ul>
+          </div>
         </div>
 
+        <!-- Module 6 -->
         <div id="module-6" class="module-content">
           <h2 class="text-3xl font-bold mb-6">6. Sicurezza e benessere</h2>
-          <p class="text-gray-300">Password, firewall, backup, malware, salute, informatica verde.</p>
+          <div class="prose prose-invert">
+            <ul>
+              <li>Password sicure, firewall, backup</li>
+              <li>Malware (virus, worm, trojan, spyware)</li>
+              <li>Informatica verde, posture corretta, pause regolari</li>
+              <li>Accessibilità (zoom, screen reader, contrasto elevato)</li>
+            </ul>
+          </div>
         </div>
 
       </div>
