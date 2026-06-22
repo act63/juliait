@@ -12,13 +12,12 @@
     .module-content.active { display: block; }
     .nav-link { transition: all 0.2s; }
     .nav-link.active { background-color: #164e63; color: white; border-left: 4px solid #67e8f9; }
-    
     .flashcard {
       perspective: 1000px;
       cursor: pointer;
     }
     .flashcard-inner {
-      transition: transform 0.7s;
+      transition: transform 0.6s;
       transform-style: preserve-3d;
     }
     .flashcard.flipped .flashcard-inner {
@@ -26,8 +25,6 @@
     }
     .flashcard-front, .flashcard-back {
       backface-visibility: hidden;
-      position: absolute;
-      inset: 0;
     }
     .flashcard-back {
       transform: rotateY(180deg);
@@ -37,8 +34,10 @@
 <body class="bg-gray-950 text-gray-100 min-h-screen">
 
   <div class="flex h-screen">
+    <!-- Sidebar -->
     <div class="w-72 bg-gray-900 border-r border-gray-700 p-6 overflow-y-auto">
       <h1 class="text-2xl font-bold text-cyan-400 mb-8">Julia's ICDL</h1>
+      
       <nav class="space-y-1">
         <a href="#" onclick="showModule(0)" class="nav-link active block py-3 px-4 rounded-lg text-sm">🏠 Home</a>
         <a href="#" onclick="showModule(1)" class="nav-link block py-3 px-4 rounded-lg text-sm">1. Computer e dispositivi</a>
@@ -50,32 +49,71 @@
       </nav>
     </div>
 
+    <!-- Main Content -->
     <div class="flex-1 overflow-y-auto p-10">
       <div class="max-w-3xl mx-auto">
 
         <div id="module-0" class="module-content active">
           <h1 class="text-4xl font-bold mb-4">Ciao Julia 👋</h1>
           <p class="text-cyan-400 text-xl">ICDL Computer Essentials</p>
-          <p class="mt-6 text-gray-300">Clicca sui moduli a sinistra e usa le flashcards per ripassare.</p>
+          <p class="mt-8 text-gray-300">Studia i moduli e usa le flashcards per memorizzare meglio.</p>
         </div>
 
         <!-- Module 1 -->
         <div id="module-1" class="module-content">
           <h2 class="text-3xl font-bold mb-6">1. Computer e dispositivi</h2>
-          <div class="prose prose-invert mb-10">... (content) ...</div>
-          <h3 class="text-xl font-bold mb-4">Flashcards</h3>
+          <div class="prose prose-invert mb-12">
+            <h3>1.1 ICT</h3>
+            <p>Tecnologie dell’Informazione e della Comunicazione. Esempi: e-commerce, e-banking, e-learning, smart working.</p>
+            <h3>Hardware</h3>
+            <ul>
+              <li>Desktop, Laptop, Tablet</li>
+              <li>Processore, RAM, Memoria di massa</li>
+              <li>Periferiche: tastiera, mouse, stampante, schermo, scanner, webcam</li>
+              <li>Porte: USB, HDMI, Ethernet</li>
+            </ul>
+          </div>
+
+          <h3 class="text-xl font-bold mb-4">Flashcards - Modulo 1</h3>
           <div id="flashcards-1" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </div>
 
-        <!-- Repeat similar structure for other modules (shortened for brevity) -->
-        <!-- ... same pattern for 2 to 6 ... -->
+        <!-- Module 2 -->
+        <div id="module-2" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">2. Desktop, icone, impostazioni</h2>
+          <div class="prose prose-invert mb-12">
+            <p>Gestione desktop, finestre, icone, impostazioni di base, installazione programmi.</p>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Flashcards - Modulo 2</h3>
+          <div id="flashcards-2" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
+
+        <!-- Other modules (summary only for space) -->
+        <div id="module-3" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">3. Testi e stampe</h2>
+          <p class="prose prose-invert">Elaborazione testi e gestione stampa.</p>
+          <h3 class="text-xl font-bold mb-4">Flashcards - Modulo 3</h3>
+          <div id="flashcards-3" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
+
+        <div id="module-4" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">4. Gestione di file</h2>
+          <p class="prose prose-invert">Organizzazione file e cartelle, compressione.</p>
+          <h3 class="text-xl font-bold mb-4">Flashcards - Modulo 4</h3>
+          <div id="flashcards-4" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
+
+        <div id="module-5" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">5. Reti</h2>
+          <p class="prose prose-invert">Internet, connessioni, Wi-Fi.</p>
+          <h3 class="text-xl font-bold mb-4">Flashcards - Modulo 5</h3>
+          <div id="flashcards-5" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
 
         <div id="module-6" class="module-content">
           <h2 class="text-3xl font-bold mb-6">6. Sicurezza e benessere</h2>
-          <div class="prose prose-invert mb-10">
-            <p>Password forti, firewall, backup, malware, salute, informatica verde, accessibilità.</p>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Flashcards</h3>
+          <p class="prose prose-invert">Password, malware, salute, informatica verde.</p>
+          <h3 class="text-xl font-bold mb-4">Flashcards - Modulo 6</h3>
           <div id="flashcards-6" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </div>
 
@@ -92,50 +130,67 @@
       document.querySelectorAll('.nav-link')[n].classList.add('active');
     }
 
-    const allFlashcards = {
+    // Flashcards Data
+    const flashcards = {
       1: [
-        {q: "Cosa significa ICT?", a: "Tecnologie dell’Informazione e della Comunicazione"},
-        {q: "Cos'è la RAM?", a: "Memoria temporanea (si cancella quando spegni)"},
-        {q: "Cos'è l'hardware?", a: "Le parti fisiche del computer"},
+        {q: "Cosa significa ICT?", a: "Information and Communication Technology (Tecnologie dell’Informazione e della Comunicazione)"},
+        {q: "Cos'è la RAM?", a: "Memoria temporanea del computer (si cancella quando spegni)"},
+        {q: "Differenza tra RAM e memoria di massa?", a: "RAM è volatile, memoria di massa è permanente"},
+        {q: "Cos'è l'hardware?", a: "Le parti fisiche del computer (tastiera, schermo, processore...)"},
       ],
       2: [
-        {q: "A cosa serve Esc?", a: "Interrompere operazioni"},
-        {q: "Come si cattura lo schermo?", a: "Tasto Print Screen"},
+        {q: "A cosa serve il tasto Esc?", a: "Interrompere un'operazione o annullare una scelta"},
+        {q: "Cosa fa il tasto Print Screen?", a: "Cattura l'immagine dello schermo"},
+        {q: "Come si chiude un programma bloccato?", a: "Dal Task Manager o Gestione Attività"},
+      ],
+      3: [
+        {q: "Come si salva un documento?", a: "File → Salva con nome (assegnare un nome significativo)"},
+        {q: "Come si imposta una stampante predefinita?", a: "Impostazioni → Dispositivi → Stampanti"},
+      ],
+      4: [
+        {q: "Cos'è un file .zip?", a: "File compresso"},
+        {q: "Come si cerca un file?", a: "Usando la barra di ricerca o Esplora File"},
+        {q: "Qual è la struttura dei file?", a: "Unità → Cartelle → Sottocartelle → File"},
+      ],
+      5: [
+        {q: "Cos'è un ISP?", a: "Internet Service Provider (fornitore di connessione Internet)"},
+        {q: "Cosa significa Wi-Fi protetto?", a: "Rete con password"},
       ],
       6: [
         {q: "Cosa sono i malware?", a: "Virus, worm, trojan, spyware"},
-        {q: "Cosa significa backup?", a: "Copia di sicurezza dei dati"},
-        {q: "Cos'è un firewall?", a: "Protezione contro accessi non autorizzati"},
+        {q: "Cosa fare per una password sicura?", a: "Lunga, con lettere, numeri e simboli"},
+        {q: "Cos'è il backup?", a: "Copia di sicurezza dei dati"},
       ]
-      // Add more if you want
     };
 
-    function createFlashcards() {
-      Object.keys(allFlashcards).forEach(mod => {
-        const container = document.getElementById(`flashcards-${mod}`);
-        if (!container) return;
-        container.innerHTML = '';
-        
-        allFlashcards[mod].forEach(card => {
-          const div = document.createElement('div');
-          div.className = "flashcard bg-gray-800 border border-gray-700 rounded-2xl p-6 hover:border-cyan-500";
-          div.innerHTML = `
-            <div class="flashcard-inner h-44 relative">
-              <div class="flashcard-front absolute inset-0 flex items-center justify-center bg-gray-800 rounded-2xl p-6 text-center">
-                <p>${card.q}</p>
-              </div>
-              <div class="flashcard-back absolute inset-0 flex items-center justify-center bg-cyan-900 rounded-2xl p-6 text-center">
-                <p class="text-cyan-100">${card.a}</p>
-              </div>
+    function createFlashcards(moduleId) {
+      const container = document.getElementById(`flashcards-${moduleId}`);
+      if (!container) return;
+      
+      flashcards[moduleId].forEach(card => {
+        const div = document.createElement('div');
+        div.className = 'flashcard bg-gray-800 border border-gray-700 rounded-2xl p-6';
+        div.innerHTML = `
+          <div class="flashcard-inner h-40 relative">
+            <div class="flashcard-front absolute inset-0 flex items-center justify-center text-center p-4 bg-gray-800 rounded-2xl">
+              <p class="text-base">${card.q}</p>
             </div>
-          `;
-          div.addEventListener('click', () => div.classList.toggle('flipped'));
-          container.appendChild(div);
-        });
+            <div class="flashcard-back absolute inset-0 flex items-center justify-center text-center p-4 bg-cyan-900 rounded-2xl">
+              <p class="text-cyan-100">${card.a}</p>
+            </div>
+          </div>
+        `;
+        div.addEventListener('click', () => div.classList.toggle('flipped'));
+        container.appendChild(div);
       });
     }
 
-    window.onload = createFlashcards;
+    // Create flashcards for all modules
+    window.onload = () => {
+      for (let i = 1; i <= 6; i++) {
+        createFlashcards(i);
+      }
+    };
   </script>
 </body>
 </html>
