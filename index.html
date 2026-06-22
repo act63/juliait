@@ -3,7 +3,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Julia - ICDL Computer Essentials</title>
 
@@ -12,7 +12,7 @@
 <style>
 
 body{
-font-family:'Segoe UI',sans-serif;
+font-family:'Segoe UI',system-ui,sans-serif;
 }
 
 .module-content{
@@ -37,8 +37,8 @@ border-left:4px solid #67e8f9;
 
 .flashcard{
 height:180px;
-cursor:pointer;
 perspective:1000px;
+cursor:pointer;
 }
 
 .flashcard-inner{
@@ -65,13 +65,13 @@ inset:0;
 
 display:flex;
 
-justify-content:center;
-
 align-items:center;
 
-padding:20px;
+justify-content:center;
 
 text-align:center;
+
+padding:20px;
 
 border-radius:16px;
 
@@ -99,28 +99,49 @@ transform:rotateY(180deg);
 
 <!-- SIDEBAR -->
 
-<div class="w-72 bg-gray-900 p-6 border-r border-gray-700">
+<div class="w-72 bg-gray-900 p-6 overflow-y-auto">
 
 <h1 class="text-2xl font-bold text-cyan-400 mb-8">
+
 Julia's ICDL
+
 </h1>
 
-<nav class="space-y-2">
+<nav class="space-y-1">
 
-<a href="#"
-onclick="showModule(0)"
+<a href="#" onclick="showModule(0)"
 class="nav-link active block p-3 rounded">
-
 🏠 Home
-
 </a>
 
-<a href="#"
-onclick="showModule(1)"
+<a href="#" onclick="showModule(1)"
 class="nav-link block p-3 rounded">
-
 1. Computer e dispositivi
+</a>
 
+<a href="#" onclick="showModule(2)"
+class="nav-link block p-3 rounded">
+2. Desktop
+</a>
+
+<a href="#" onclick="showModule(3)"
+class="nav-link block p-3 rounded">
+3. Testi e stampe
+</a>
+
+<a href="#" onclick="showModule(4)"
+class="nav-link block p-3 rounded">
+4. Gestione file
+</a>
+
+<a href="#" onclick="showModule(5)"
+class="nav-link block p-3 rounded">
+5. Reti
+</a>
+
+<a href="#" onclick="showModule(6)"
+class="nav-link block p-3 rounded">
+6. Sicurezza
 </a>
 
 </nav>
@@ -135,106 +156,35 @@ class="nav-link block p-3 rounded">
 
 <!-- HOME -->
 
-<div
-id="module-0"
-class="module-content active">
+<div id="module-0" class="module-content active">
 
-<h1 class="text-5xl font-bold mb-5">
-
+<h1 class="text-5xl font-bold mb-4">
 Ciao Julia 👋
-
 </h1>
 
 <p class="text-cyan-400 text-xl">
-
 ICDL Computer Essentials
-
-</p>
-
-<p class="mt-6 text-gray-400">
-
-Apri il modulo per studiare e usare le flashcards.
-
 </p>
 
 </div>
 
-<!-- MODULE -->
+<!-- MODULE 1 -->
 
-<div
-id="module-1"
-class="module-content">
+<div id="module-1" class="module-content">
 
-<h2 class="text-4xl font-bold mb-8">
-
+<h2 class="text-3xl font-bold mb-6">
 1. Computer e dispositivi
-
 </h2>
 
-<div class="space-y-8 mb-10">
+<p class="mb-6 text-gray-300">
 
-<div>
-
-<h3 class="text-cyan-400 text-xl mb-3">
-
-1.1 ICT
-
-</h3>
-
-<p class="text-gray-300">
-
-Tecnologie dell’Informazione e della Comunicazione.
+ICT = Tecnologie dell’Informazione e della Comunicazione
 
 </p>
-
-<p class="text-gray-400">
-
-Esempi:
-e-learning,
-e-banking,
-smart working.
-
-</p>
-
-</div>
-
-<div>
-
-<h3 class="text-cyan-400 text-xl mb-3">
-
-1.2 Hardware
-
-</h3>
-
-<ul class="list-disc ml-6 text-gray-300">
-
-<li>CPU</li>
-
-<li>RAM</li>
-
-<li>SSD</li>
-
-<li>Monitor</li>
-
-<li>Tastiera</li>
-
-<li>Mouse</li>
-
-</ul>
-
-</div>
-
-</div>
-
-<h3 class="text-2xl font-bold mb-6">
-
-🃏 Flashcards
-
-</h3>
 
 <div class="grid md:grid-cols-2 gap-5">
 
-<div class="flashcard border border-gray-700 rounded-xl">
+<div class="flashcard border rounded-xl">
 
 <div class="flashcard-inner">
 
@@ -254,7 +204,7 @@ Tecnologie dell’Informazione e Comunicazione
 
 </div>
 
-<div class="flashcard border border-gray-700 rounded-xl">
+<div class="flashcard border rounded-xl">
 
 <div class="flashcard-inner">
 
@@ -274,19 +224,57 @@ Memoria temporanea
 
 </div>
 
-<div class="flashcard border border-gray-700 rounded-xl">
+</div>
+
+</div>
+
+<!-- MODULES -->
+
+<div id="module-2" class="module-content">
+<h2 class="text-3xl font-bold">
+2. Desktop, icone, impostazioni
+</h2>
+</div>
+
+<div id="module-3" class="module-content">
+<h2 class="text-3xl font-bold">
+3. Testi e stampe
+</h2>
+</div>
+
+<div id="module-4" class="module-content">
+<h2 class="text-3xl font-bold">
+4. Gestione file
+</h2>
+</div>
+
+<div id="module-5" class="module-content">
+<h2 class="text-3xl font-bold">
+5. Reti
+</h2>
+</div>
+
+<div id="module-6" class="module-content">
+
+<h2 class="text-3xl font-bold mb-6">
+6. Sicurezza
+</h2>
+
+<div class="grid md:grid-cols-2 gap-5">
+
+<div class="flashcard border rounded-xl">
 
 <div class="flashcard-inner">
 
 <div class="flashcard-front">
 
-Cos'è Hardware?
+Cos'è un firewall?
 
 </div>
 
 <div class="flashcard-back">
 
-Componenti fisici del computer
+Protegge da accessi non autorizzati
 
 </div>
 
@@ -294,19 +282,19 @@ Componenti fisici del computer
 
 </div>
 
-<div class="flashcard border border-gray-700 rounded-xl">
+<div class="flashcard border rounded-xl">
 
 <div class="flashcard-inner">
 
 <div class="flashcard-front">
 
-Cos'è CPU?
+Cos'è backup?
 
 </div>
 
 <div class="flashcard-back">
 
-Il processore del computer
+Copia di sicurezza dei dati
 
 </div>
 
@@ -330,28 +318,19 @@ function showModule(n){
 
 document
 .querySelectorAll(".module-content")
-.forEach(
-el=>el.classList.remove("active")
-);
+.forEach(el=>el.classList.remove("active"));
 
 document
-.getElementById(
-"module-"+n
-)
-.classList.add(
-"active"
-);
+.getElementById("module-"+n)
+.classList.add("active");
 
 document
 .querySelectorAll(".nav-link")
-.forEach(
-el=>el.classList.remove("active")
-);
+.forEach(el=>el.classList.remove("active"));
 
 document
 .querySelectorAll(".nav-link")[n]
-.classList.add(
-"active");
+.classList.add("active");
 
 }
 
@@ -359,12 +338,10 @@ document
 .querySelectorAll(".flashcard")
 .forEach(card=>{
 
-card.addEventListener(
-"click",
-()=>{
-card.classList.toggle(
-"flipped"
-);
+card.addEventListener("click",()=>{
+
+card.classList.toggle("flipped");
+
 });
 
 });
@@ -372,6 +349,5 @@ card.classList.toggle(
 </script>
 
 </body>
-
 </html>
 ```
