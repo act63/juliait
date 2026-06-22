@@ -12,7 +12,8 @@
     .module-content.active { display: block; }
     .nav-link { transition: all 0.2s; }
     .nav-link.active { background-color: #164e63; color: white; border-left: 4px solid #67e8f9; }
-    .prose h3 { margin-top: 1.5rem; font-size: 1.25rem; }
+    .prose ul { list-style-type: disc; padding-left: 1.5rem; }
+    .prose li { margin-bottom: 0.4rem; }
   </style>
 </head>
 <body class="bg-gray-950 text-gray-100 min-h-screen">
@@ -39,8 +40,8 @@
 
         <div id="module-0" class="module-content active">
           <h1 class="text-4xl font-bold mb-4">Ciao Julia 👋</h1>
-          <p class="text-cyan-400 text-xl">ICDL Computer Essentials</p>
-          <p class="mt-8 text-gray-300">Studia un modulo alla volta. Tutto il materiale del PDF è qui organizzato.</p>
+          <p class="text-cyan-400 text-xl mb-8">ICDL Computer Essentials</p>
+          <p class="text-gray-300">Materiale completo dal manuale. Studia un modulo alla volta.</p>
         </div>
 
         <!-- Module 1 -->
@@ -48,16 +49,18 @@
           <h2 class="text-3xl font-bold mb-6">1. Computer e dispositivi</h2>
           <div class="prose prose-invert">
             <h3>1.1 ICT</h3>
-            <p><strong>Information and Communication Technology</strong> – Tecnologie dell’Informazione e della Comunicazione.</p>
-            <p>Esempi: e-commerce, e-banking, e-government, e-learning, smart working.</p>
+            <p><strong>Tecnologie dell’Informazione e della Comunicazione</strong>. Permettono di archiviare, elaborare e trasmettere informazioni.</p>
+            <p>Esempi: e-commerce, e-banking, e-government, e-learning, smart working, tecnologie mobili.</p>
 
             <h3>1.2 Hardware</h3>
             <ul>
-              <li><strong>Tipi di computer</strong>: desktop, laptop (portatile), tablet</li>
-              <li><strong>Dispositivi</strong>: smartphone, lettori multimediali, fotocamere digitali</li>
-              <li><strong>Componenti principali</strong>: Processore (CPU), RAM (memoria volatile), Memoria di massa (disco fisso, USB, ecc.)</li>
-              <li><strong>Periferiche</strong>: stampanti, schermi, scanner, tastiera, mouse, webcam, altoparlanti, microfono</li>
-              <li><strong>Porte comuni</strong>: USB, HDMI, Ethernet, FireWire</li>
+              <li><strong>Tipi di computer</strong>: Desktop (fisso), Laptop/Notebook (portatile), Tablet</li>
+              <li><strong>Dispositivi</strong>: Smartphone, lettori multimediali, fotocamere digitali</li>
+              <li><strong>Processore (CPU)</strong>: Esegue i calcoli. Velocità misurata in GHz</li>
+              <li><strong>RAM</strong>: Memoria temporanea (volatile) – più RAM = computer più veloce</li>
+              <li><strong>Memoria di massa</strong>: Disco fisso, USB, schede di memoria, CD/DVD (permanente)</li>
+              <li><strong>Periferiche</strong>: Stampanti (laser, inkjet), schermi (LCD/LED), scanner, tastiera, mouse/trackpad, webcam, altoparlanti, microfono</li>
+              <li><strong>Porte comuni</strong>: USB, HDMI, Ethernet (rete), FireWire</li>
             </ul>
           </div>
         </div>
@@ -66,12 +69,14 @@
         <div id="module-2" class="module-content">
           <h2 class="text-3xl font-bold mb-6">2. Desktop, icone, impostazioni</h2>
           <div class="prose prose-invert">
-            <p>Scopo del desktop e della barra delle applicazioni.</p>
+            <p>Il <strong>desktop</strong> è la scrivania digitale. La <strong>barra delle applicazioni</strong> permette di passare tra programmi.</p>
             <ul>
-              <li>Gestione icone (selezionare, spostare, creare collegamenti)</li>
-              <li>Uso delle finestre (ridurre, massimizzare, chiudere, passare da una all’altra)</li>
-              <li>Impostazioni: data/ora, volume, sfondo, risoluzione, lingue tastiera</li>
-              <li>Installare/disinstallare applicazioni, collegare dispositivi USB</li>
+              <li>Gestire icone: selezionare, spostare, creare/rinominare collegamenti</li>
+              <li>Gestione finestre: aprire, minimizzare, massimizzare, ridimensionare, chiudere</li>
+              <li>Impostazioni: data e ora, volume, sfondo, risoluzione schermo, lingue tastiera</li>
+              <li>Installare/disinstallare applicazioni</li>
+              <li>Collegare e scollegare dispositivi USB in modo sicuro</li>
+              <li>Catturare schermo (Print Screen)</li>
             </ul>
           </div>
         </div>
@@ -80,8 +85,17 @@
         <div id="module-3" class="module-content">
           <h2 class="text-3xl font-bold mb-6">3. Testi e stampe</h2>
           <div class="prose prose-invert">
-            <p>Uso di applicazioni di elaborazione testi (aprire, inserire testo, copiare/incollare, salvare).</p>
-            <p>Gestione stampanti: installare, impostare predefinita, stampare documenti, gestire coda di stampa.</p>
+            <p>Uso di programmi di elaborazione testi (es. Word):</p>
+            <ul>
+              <li>Aprire, scrivere, copiare/incollare testo e immagini</li>
+              <li>Salvare documenti con nome appropriato</li>
+            </ul>
+            <p>Gestione stampanti:</p>
+            <ul>
+              <li>Installare stampante</li>
+              <li>Impostare stampante predefinita</li>
+              <li>Stampare documenti e gestire la coda di stampa</li>
+            </ul>
           </div>
         </div>
 
@@ -89,12 +103,14 @@
         <div id="module-4" class="module-content">
           <h2 class="text-3xl font-bold mb-6">4. Gestione di file</h2>
           <div class="prose prose-invert">
-            <p>Struttura gerarchica di file e cartelle.</p>
+            <p>Il sistema operativo organizza i dati in unità, cartelle e file (struttura gerarchica).</p>
             <ul>
-              <li>Creare, rinominare, copiare, spostare, eliminare file/cartelle</li>
-              <li>Tipi di file comuni (testo, foglio elettronico, PDF, immagine, ecc.)</li>
-              <li>Ricerca file, visualizzazione (icone, lista, dettagli)</li>
-              <li>Compressione ed estrazione di file</li>
+              <li>Creare, rinominare, copiare, spostare, eliminare file e cartelle</li>
+              <li>Visualizzare proprietà (nome, dimensione, data)</li>
+              <li>Cercare file per nome o contenuto</li>
+              <li>Tipi di file: .txt, .docx, .xlsx, .pptx, .pdf, .jpg, .mp3, .mp4, .zip</li>
+              <li>Comprimere ed estrarre file (ZIP)</li>
+              <li>Supporti di memoria: disco fisso, USB, cloud, CD/DVD</li>
             </ul>
           </div>
         </div>
@@ -103,11 +119,13 @@
         <div id="module-5" class="module-content">
           <h2 class="text-3xl font-bold mb-6">5. Reti</h2>
           <div class="prose prose-invert">
-            <p>Concetti di rete, Internet, intranet, VPN.</p>
+            <p><strong>Rete</strong>: insieme di computer collegati per condividere dati e dispositivi.</p>
             <ul>
-              <li>Connessioni: Wi-Fi, cavo, mobile, satellite</li>
-              <li>Provider (ISP), velocità (bps, Mbps, Gbps)</li>
-              <li>Scaricamento e caricamento</li>
+              <li><strong>Internet</strong>: rete globale (WWW, email, VoIP...)</li>
+              <li>Tipi di connessione: Wi-Fi, cavo, mobile, satellite</li>
+              <li>ISP (Internet Service Provider)</li>
+              <li>Velocità: bps, Kbps, Mbps, Gbps (download e upload)</li>
+              <li>Reti wireless: protette (con password) o aperte</li>
             </ul>
           </div>
         </div>
@@ -117,10 +135,13 @@
           <h2 class="text-3xl font-bold mb-6">6. Sicurezza e benessere</h2>
           <div class="prose prose-invert">
             <ul>
-              <li>Password sicure, firewall, backup</li>
-              <li>Malware (virus, worm, trojan, spyware)</li>
-              <li>Informatica verde, posture corretta, pause regolari</li>
-              <li>Accessibilità (zoom, screen reader, contrasto elevato)</li>
+              <li><strong>Password sicure</strong>: lunghe, con lettere, numeri, simboli. Cambiarle regolarmente</li>
+              <li><strong>Firewall</strong>: protegge da accessi non autorizzati</li>
+              <li><strong>Backup</strong>: copie di sicurezza dei dati</li>
+              <li><strong>Malware</strong>: virus, worm, trojan, spyware. Usare antivirus</li>
+              <li><strong>Salute</strong>: posture corretta, pause regolari, illuminazione adeguata</li>
+              <li><strong>Informatica verde</strong>: spegnimento automatico, riciclo dispositivi</li>
+              <li>Opzioni di accessibilità: zoom, screen reader, contrasto elevato</li>
             </ul>
           </div>
         </div>
