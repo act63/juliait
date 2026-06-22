@@ -1,423 +1,207 @@
-```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Julia - ICDL Computer Essentials</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<style>
-
-body{
-font-family:'Segoe UI',sans-serif;
-}
-
-.module{
-display:none;
-}
-
-.module.active{
-display:block;
-}
-
-.nav.active{
-background:#164e63;
-border-left:4px solid #67e8f9;
-}
-
-.flashcards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:16px;
-margin-top:20px;
-}
-
-.card{
-background:#111827;
-padding:18px;
-border-radius:16px;
-border:1px solid #374151;
-}
-
-.card strong{
-color:#67e8f9;
-}
-
-.box{
-background:#111827;
-padding:18px;
-border-radius:16px;
-margin-top:18px;
-}
-
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julia - ICDL Computer Essentials</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    body { font-family: 'Segoe UI', system-ui, sans-serif; }
+    .module-content { display: none; }
+    .module-content.active { display: block; }
+    .nav-link { transition: all 0.2s; }
+    .nav-link.active { background-color: #164e63; color: white; border-left: 4px solid #67e8f9; }
+    
+    .flashcard {
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .flashcard-inner {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+    .flashcard-front, .flashcard-back {
+      backface-visibility: hidden;
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .flashcard-back {
+      transform: rotateY(180deg);
+    }
+  </style>
 </head>
-
-<body class="bg-gray-950 text-gray-100">
-
-<div class="flex min-h-screen">
-
-<!-- SIDEBAR -->
-
-<div class="w-72 bg-gray-900 p-6">
-
-<h1 class="text-3xl font-bold text-cyan-400 mb-10">
-
-Julia's ICDL
-
-</h1>
-
-<div class="space-y-2">
-
-<button onclick="openM(0)"
-class="nav active p-3 rounded w-full text-left">
-
-🏠 Home
-
-</button>
-
-<button onclick="openM(1)"
-class="nav p-3 rounded w-full text-left">
-
-1. Computer
-
-</button>
-
-<button onclick="openM(2)"
-class="nav p-3 rounded w-full text-left">
-
-2. Desktop
-
-</button>
-
-<button onclick="openM(3)"
-class="nav p-3 rounded w-full text-left">
-
-3. Testi
-
-</button>
-
-<button onclick="openM(4)"
-class="nav p-3 rounded w-full text-left">
-
-4. File
-
-</button>
-
-<button onclick="openM(5)"
-class="nav p-3 rounded w-full text-left">
-
-5. Reti
-
-</button>
-
-<button onclick="openM(6)"
-class="nav p-3 rounded w-full text-left">
-
-6. Sicurezza
-
-</button>
-
-</div>
-
-</div>
-
-<!-- CONTENT -->
-
-<div class="flex-1 p-10">
-
-<div id="m0" class="module active">
-
-<h1 class="text-5xl font-bold mb-5">
-Ciao Julia 👋
-</h1>
-
-<p class="text-cyan-400 text-xl">
-ICDL Computer Essentials
-</p>
-
-<div class="box">
-
-Studia modulo → leggi → ripassa flashcards.
-
-</div>
-
-</div>
-
-<!-- MODULE 1 -->
-
-<div id="m1" class="module">
-
-<h2 class="text-4xl mb-6">
-Computer e dispositivi
-</h2>
-
-<div class="box">
-
-<ul class="list-disc ml-6">
-
-<li>Hardware = parti fisiche</li>
-<li>Software = programmi</li>
-<li>CPU = processore</li>
-<li>RAM = memoria temporanea</li>
-<li>SSD = archiviazione</li>
-
-</ul>
-
-</div>
-
-<div class="flashcards">
-
-<div class="card">
-<strong>CPU</strong>
-<p>Elabora istruzioni</p>
-</div>
-
-<div class="card">
-<strong>RAM</strong>
-<p>Memoria veloce temporanea</p>
-</div>
-
-<div class="card">
-<strong>SSD</strong>
-<p>Memoria permanente</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- MODULE 2 -->
-
-<div id="m2" class="module">
-
-<h2 class="text-4xl mb-6">
-Desktop
-</h2>
-
-<div class="box">
-
-<ul class="list-disc ml-6">
-
-<li>Desktop</li>
-<li>Finestre</li>
-<li>Impostazioni</li>
-<li>Installazione software</li>
-
-</ul>
-
-</div>
-
-<div class="flashcards">
-
-<div class="card">
-<strong>Desktop</strong>
-<p>Area principale</p>
-</div>
-
-<div class="card">
-<strong>USB</strong>
-<p>Connette dispositivi</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- MODULE 3 -->
-
-<div id="m3" class="module">
-
-<h2 class="text-4xl mb-6">
-
-Testi e stampe
-
-</h2>
-
-<div class="flashcards">
-
-<div class="card">
-
-<strong>Salva</strong>
-
-<p>Memorizza documento</p>
-
-</div>
-
-<div class="card">
-
-<strong>Stampa</strong>
-
-<p>Invia alla stampante</p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- MODULE 4 -->
-
-<div id="m4" class="module">
-
-<h2 class="text-4xl mb-6">
-
-Gestione file
-
-</h2>
-
-<div class="flashcards">
-
-<div class="card">
-
-<strong>Cartella</strong>
-
-<p>Contiene file</p>
-
-</div>
-
-<div class="card">
-
-<strong>Compressione</strong>
-
-<p>Riduce dimensioni</p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- MODULE 5 -->
-
-<div id="m5" class="module">
-
-<h2 class="text-4xl mb-6">
-
-Reti
-
-</h2>
-
-<div class="flashcards">
-
-<div class="card">
-
-<strong>Wi-Fi</strong>
-
-<p>Connessione wireless</p>
-
-</div>
-
-<div class="card">
-
-<strong>Provider</strong>
-
-<p>Fornisce Internet</p>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- MODULE 6 -->
-
-<div id="m6" class="module">
-
-<h2 class="text-4xl mb-6">
-
-Sicurezza
-
-</h2>
-
-<div class="box">
-
-<ul class="list-disc ml-6">
-
-<li>Password forti</li>
-
-<li>Backup</li>
-
-<li>Firewall</li>
-
-<li>Phishing</li>
-
-<li>Aggiornamenti</li>
-
-</ul>
-
-</div>
-
-<div class="flashcards">
-
-<div class="card">
-
-<strong>Firewall</strong>
-
-<p>Protegge rete</p>
-
-</div>
-
-<div class="card">
-
-<strong>Backup</strong>
-
-<p>Copia dati</p>
-
-</div>
-
-<div class="card">
-
-<strong>Malware</strong>
-
-<p>Software dannoso</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<script>
-
-function openM(n){
-
-document
-.querySelectorAll(".module")
-.forEach(
-x=>x.classList.remove("active")
-);
-
-document
-.querySelectorAll(".nav")
-.forEach(
-x=>x.classList.remove("active")
-);
-
-document
-.getElementById(
-"m"+n
-).classList.add(
-"active"
-);
-
-document
-.querySelectorAll(".nav")[n]
-.classList.add(
-"active"
-);
-
-}
-
-</script>
-
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="w-72 bg-gray-900 border-r border-gray-700 p-6 overflow-y-auto">
+      <h1 class="text-2xl font-bold text-cyan-400 mb-8">Julia's ICDL</h1>
+      <nav class="space-y-1">
+        <a href="#" onclick="showModule(0)" class="nav-link active block py-3 px-4 rounded-lg text-sm">🏠 Home</a>
+        <a href="#" onclick="showModule(1)" class="nav-link block py-3 px-4 rounded-lg text-sm">1. Computer e dispositivi</a>
+        <a href="#" onclick="showModule(2)" class="nav-link block py-3 px-4 rounded-lg text-sm">2. Desktop, icone, impostazioni</a>
+        <a href="#" onclick="showModule(3)" class="nav-link block py-3 px-4 rounded-lg text-sm">3. Testi e stampe</a>
+        <a href="#" onclick="showModule(4)" class="nav-link block py-3 px-4 rounded-lg text-sm">4. Gestione di file</a>
+        <a href="#" onclick="showModule(5)" class="nav-link block py-3 px-4 rounded-lg text-sm">5. Reti</a>
+        <a href="#" onclick="showModule(6)" class="nav-link block py-3 px-4 rounded-lg text-sm">6. Sicurezza e benessere</a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 overflow-y-auto p-10">
+      <div class="max-w-3xl mx-auto">
+
+        <div id="module-0" class="module-content active">
+          <h1 class="text-4xl font-bold mb-4">Ciao Julia 👋</h1>
+          <p class="text-cyan-400 text-xl">ICDL Computer Essentials</p>
+          <p class="mt-8 text-gray-300">Tutto il materiale principale + flashcards + mini quiz finale.</p>
+        </div>
+
+        <!-- Module 1 -->
+        <div id="module-1" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">1. Computer e dispositivi</h2>
+          <div class="prose prose-invert space-y-6">
+            <div>
+              <h3>1.1 ICT</h3>
+              <p>Tecnologie dell’Informazione e della Comunicazione. Esempi: commercio elettronico, e-banking, e-government, e-learning, smart working.</p>
+            </div>
+            <div>
+              <h3>1.2 Hardware</h3>
+              <ul>
+                <li>Tipi di computer: desktop, laptop, tablet</li>
+                <li>Processore (CPU), RAM (volatile), Memoria di massa (permanente)</li>
+                <li>Periferiche: stampanti, schermi, scanner, tastiera, mouse, webcam, altoparlanti, microfono</li>
+                <li>Porte: USB, HDMI, Ethernet</li>
+              </ul>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold mt-10 mb-4">Flashcards - Modulo 1</h3>
+          <div id="flashcards-1" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
+
+        <!-- Module 2 to 6 (similar structure) -->
+        <div id="module-2" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">2. Desktop, icone, impostazioni</h2>
+          <div class="prose prose-invert">
+            <p>Gestione desktop, icone, finestre, impostazioni di base, installazione programmi, collegamento dispositivi USB.</p>
+          </div>
+          <h3 class="text-xl font-bold mt-10 mb-4">Flashcards - Modulo 2</h3>
+          <div id="flashcards-2" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
+
+        <div id="module-3" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">3. Testi e stampe</h2>
+          <div class="prose prose-invert">
+            <p>Elaborazione testi, copia/incolla, salvataggio, gestione stampanti e stampa documenti.</p>
+          </div>
+          <h3 class="text-xl font-bold mt-10 mb-4">Flashcards - Modulo 3</h3>
+          <div id="flashcards-3" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
+
+        <div id="module-4" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">4. Gestione di file</h2>
+          <div class="prose prose-invert">
+            <p>Struttura gerarchica, creare/rinominare/copiare/spostare/eliminate file, compressione, ricerca.</p>
+          </div>
+          <h3 class="text-xl font-bold mt-10 mb-4">Flashcards - Modulo 4</h3>
+          <div id="flashcards-4" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
+
+        <div id="module-5" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">5. Reti</h2>
+          <div class="prose prose-invert">
+            <p>Rete, Internet, Wi-Fi, ISP, velocità di trasferimento, reti protette.</p>
+          </div>
+          <h3 class="text-xl font-bold mt-10 mb-4">Flashcards - Modulo 5</h3>
+          <div id="flashcards-5" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
+
+        <div id="module-6" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">6. Sicurezza e benessere</h2>
+          <div class="prose prose-invert">
+            <p>Password sicure, firewall, backup, malware, salute, informatica verde, accessibilità.</p>
+          </div>
+          <h3 class="text-xl font-bold mt-10 mb-4">Flashcards - Modulo 6</h3>
+          <div id="flashcards-6" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
+
+        <!-- Mini Quiz -->
+        <div id="module-quiz" class="module-content">
+          <h2 class="text-3xl font-bold mb-8">Mini Quiz Finale</h2>
+          <div id="quiz-container" class="space-y-8"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showModule(n) {
+      document.querySelectorAll('.module-content').forEach(el => el.classList.remove('active'));
+      document.getElementById('module-' + n).classList.add('active');
+
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+      const links = document.querySelectorAll('.nav-link');
+      if (n < links.length) links[n].classList.add('active');
+    }
+
+    // Flashcards
+    const flashcardsData = {
+      1: [
+        {q: "Cosa significa ICT?", a: "Tecnologie dell’Informazione e della Comunicazione"},
+        {q: "Cos'è la RAM?", a: "Memoria temporanea (volatile)"},
+        {q: "Cos'è l'hardware?", a: "Le parti fisiche del computer"},
+      ],
+      2: [
+        {q: "A cosa serve il tasto Esc?", a: "Interrompere un'operazione"},
+        {q: "Come si cattura lo schermo?", a: "Tasto Print Screen"},
+      ],
+      3: [
+        {q: "Come si salva un documento?", a: "File → Salva con nome"},
+      ],
+      4: [
+        {q: "Cos'è un file compresso?", a: "File .zip"},
+        {q: "Come si organizza i file?", a: "In cartelle e sottocartelle"},
+      ],
+      5: [
+        {q: "Cos'è un ISP?", a: "Internet Service Provider"},
+      ],
+      6: [
+        {q: "Cosa sono i malware?", a: "Virus, worm, trojan, spyware"},
+        {q: "Cos'è un backup?", a: "Copia di sicurezza dei dati"},
+      ]
+    };
+
+    function createFlashcards() {
+      Object.keys(flashcardsData).forEach(mod => {
+        const container = document.getElementById(`flashcards-${mod}`);
+        if (!container) return;
+        container.innerHTML = '';
+        flashcardsData[mod].forEach(card => {
+          const div = document.createElement('div');
+          div.className = 'flashcard bg-gray-800 border border-gray-700 rounded-2xl p-6';
+          div.innerHTML = `
+            <div class="flashcard-inner h-48 relative">
+              <div class="flashcard-front bg-gray-800 rounded-2xl">${card.q}</div>
+              <div class="flashcard-back bg-cyan-900 rounded-2xl text-cyan-100">${card.a}</div>
+            </div>
+          `;
+          div.addEventListener('click', () => div.classList.toggle('flipped'));
+          container.appendChild(div);
+        });
+      });
+    }
+
+    window.onload = createFlashcards;
+  </script>
 </body>
 </html>
-```
