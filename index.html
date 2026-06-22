@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julia - ICDL Computer Essentials</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    body { font-family: 'Segoe UI', system-ui, sans-serif; }
+    .module-content { display: none; }
+    .module-content.active { display: block; }
+    .nav-link { transition: all 0.2s; }
+    .nav-link.active { background-color: #164e63; color: white; border-left: 4px solid #67e8f9; }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen">
+
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="w-72 bg-gray-900 border-r border-gray-700 p-6 overflow-y-auto">
+      <h1 class="text-2xl font-bold text-cyan-400 mb-8">Julia's ICDL</h1>
+      
+      <nav class="space-y-1">
+        <a href="#" onclick="showModule(0)" class="nav-link active block py-3 px-4 rounded-lg text-sm">🏠 Home</a>
+        <a href="#" onclick="showModule(1)" class="nav-link block py-3 px-4 rounded-lg text-sm">1. Computer e dispositivi</a>
+        <a href="#" onclick="showModule(2)" class="nav-link block py-3 px-4 rounded-lg text-sm">2. Desktop, icone, impostazioni</a>
+        <a href="#" onclick="showModule(3)" class="nav-link block py-3 px-4 rounded-lg text-sm">3. Testi e stampe</a>
+        <a href="#" onclick="showModule(4)" class="nav-link block py-3 px-4 rounded-lg text-sm">4. Gestione di file</a>
+        <a href="#" onclick="showModule(5)" class="nav-link block py-3 px-4 rounded-lg text-sm">5. Reti</a>
+        <a href="#" onclick="showModule(6)" class="nav-link block py-3 px-4 rounded-lg text-sm">6. Sicurezza e benessere</a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 overflow-y-auto p-10">
+      <div class="max-w-3xl mx-auto">
+
+        <div id="module-0" class="module-content active">
+          <h1 class="text-4xl font-bold mb-4">Ciao Julia 👋</h1>
+          <p class="text-cyan-400 text-xl">ICDL Computer Essentials Study Site</p>
+          <p class="mt-8 text-gray-300 text-lg">Clicca sui moduli a sinistra per studiare uno alla volta.</p>
+        </div>
+
+        <div id="module-1" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">1. Computer e dispositivi</h2>
+          <div class="prose prose-invert">
+            <h3>ICT</h3>
+            <p>Tecnologie dell’Informazione e della Comunicazione. Esempi: e-commerce, e-banking, e-learning, smart working.</p>
+            
+            <h3>Hardware</h3>
+            <ul>
+              <li>Tipi di computer: desktop, laptop, tablet</li>
+              <li>Dispositivi: smartphone, lettori multimediali, fotocamere</li>
+              <li>Componenti: Processore (CPU), RAM, Memoria di massa</li>
+              <li>Periferiche: tastiera, mouse, stampante, schermo, scanner, webcam...</li>
+              <li>Porte comuni: USB, HDMI, Ethernet</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="module-2" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">2. Desktop, icone, impostazioni</h2>
+          <p class="text-gray-300">Desktop, barra delle applicazioni, gestione finestre, icone, impostazioni di base (data, volume, risoluzione, lingue, installazione programmi).</p>
+        </div>
+
+        <div id="module-3" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">3. Testi e stampe</h2>
+          <p class="text-gray-300">Elaborazione testi, copia/incolla, salvataggio, installazione stampanti, stampa documenti.</p>
+        </div>
+
+        <div id="module-4" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">4. Gestione di file</h2>
+          <p class="text-gray-300">File e cartelle, organizzazione, copia/spostamento, eliminazione, compressione, tipi di memoria.</p>
+        </div>
+
+        <div id="module-5" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">5. Reti</h2>
+          <p class="text-gray-300">Concetti di rete, Internet, Wi-Fi, provider, velocità di trasferimento.</p>
+        </div>
+
+        <div id="module-6" class="module-content">
+          <h2 class="text-3xl font-bold mb-6">6. Sicurezza e benessere</h2>
+          <p class="text-gray-300">Password, firewall, backup, malware, salute, informatica verde.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showModule(n) {
+      document.querySelectorAll('.module-content').forEach(el => el.classList.remove('active'));
+      document.getElementById('module-' + n).classList.add('active');
+
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+      document.querySelectorAll('.nav-link')[n].classList.add('active');
+    }
+  </script>
+</body>
+</html>
