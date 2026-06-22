@@ -12,7 +12,23 @@
     .module-content.active { display: block; }
     .nav-link { transition: all 0.2s; }
     .nav-link.active { background-color: #164e63; color: white; border-left: 4px solid #67e8f9; }
-    .prose li { margin-bottom: 0.35rem; }
+    .flashcard {
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .flashcard-inner {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+    .flashcard-front, .flashcard-back {
+      backface-visibility: hidden;
+    }
+    .flashcard-back {
+      transform: rotateY(180deg);
+    }
   </style>
 </head>
 <body class="bg-gray-950 text-gray-100 min-h-screen">
@@ -40,103 +56,65 @@
         <div id="module-0" class="module-content active">
           <h1 class="text-4xl font-bold mb-4">Ciao Julia 👋</h1>
           <p class="text-cyan-400 text-xl">ICDL Computer Essentials</p>
-          <p class="mt-8 text-gray-300">Tutto il materiale principale del manuale è qui, organizzato per modulo.</p>
+          <p class="mt-8 text-gray-300">Studia i moduli e usa le flashcards per memorizzare meglio.</p>
         </div>
 
+        <!-- Module 1 -->
         <div id="module-1" class="module-content">
           <h2 class="text-3xl font-bold mb-6">1. Computer e dispositivi</h2>
-          <div class="prose prose-invert">
+          <div class="prose prose-invert mb-12">
             <h3>1.1 ICT</h3>
-            <p>Tecnologie dell’Informazione e della Comunicazione. Permettono di archiviare, elaborare e trasmettere informazioni.</p>
-            <p>Servizi principali: e-commerce, e-banking, e-government, e-learning, smart working, tecnologie mobili, applicazioni di produttività.</p>
-
-            <h3>1.2 Hardware</h3>
+            <p>Tecnologie dell’Informazione e della Comunicazione. Esempi: e-commerce, e-banking, e-learning, smart working.</p>
+            <h3>Hardware</h3>
             <ul>
-              <li>Tipi di computer: desktop, laptop (portatile), tablet</li>
-              <li>Dispositivi: smartphone, lettori multimediali, fotocamere digitali</li>
-              <li>Processore (CPU): esegue i calcoli, velocità in GHz</li>
-              <li>RAM: memoria temporanea (volatile) – influisce sulle prestazioni</li>
-              <li>Memoria di massa: disco fisso, USB, schede memoria, CD/DVD, cloud</li>
-              <li>Periferiche: stampanti (laser, inkjet), schermi (LCD/LED, touchscreen), scanner, tastiera (QWERTY), mouse, trackpad, webcam, altoparlanti, microfono, docking station</li>
-              <li>Porte: USB, HDMI, Ethernet, FireWire, seriale, parallela</li>
+              <li>Desktop, Laptop, Tablet</li>
+              <li>Processore, RAM, Memoria di massa</li>
+              <li>Periferiche: tastiera, mouse, stampante, schermo, scanner, webcam</li>
+              <li>Porte: USB, HDMI, Ethernet</li>
             </ul>
-
-            <h3>1.3 Software e licenze</h3>
-            <ul>
-              <li>Software: sistemi operativi (Windows, macOS, Linux, Android, iOS) e applicazioni</li>
-              <li>Tipi di licenze: proprietaria, open source, freeware, shareware, trial</li>
-              <li>EULA: contratto con l’utente finale</li>
-            </ul>
-
-            <h3>1.4 Avvio e spegnimento</h3>
-            <p>Accensione con account Microsoft, login con password, spegnimento, riavvio, disconnessione.</p>
           </div>
+
+          <h3 class="text-xl font-bold mb-4">Flashcards - Modulo 1</h3>
+          <div id="flashcards-1" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </div>
 
+        <!-- Module 2 -->
         <div id="module-2" class="module-content">
           <h2 class="text-3xl font-bold mb-6">2. Desktop, icone, impostazioni</h2>
-          <div class="prose prose-invert">
-            <ul>
-              <li>Scopo del desktop e della barra delle applicazioni</li>
-              <li>Gestione icone: selezionare, spostare, creare collegamenti</li>
-              <li>Gestione finestre: aprire, minimizzare, massimizzare, ridimensionare, chiudere, passare da una all’altra</li>
-              <li>Impostazioni: data/ora, volume, sfondo, risoluzione, lingue tastiera</li>
-              <li>Chiudere programmi bloccati, installare/disinstallare app</li>
-              <li>Collegare dispositivi USB in sicurezza</li>
-              <li>Catturare schermo</li>
-            </ul>
+          <div class="prose prose-invert mb-12">
+            <p>Gestione desktop, finestre, icone, impostazioni di base, installazione programmi.</p>
           </div>
+          <h3 class="text-xl font-bold mb-4">Flashcards - Modulo 2</h3>
+          <div id="flashcards-2" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </div>
 
+        <!-- Other modules (summary only for space) -->
         <div id="module-3" class="module-content">
           <h2 class="text-3xl font-bold mb-6">3. Testi e stampe</h2>
-          <div class="prose prose-invert">
-            <ul>
-              <li>Usare applicazioni di elaborazione testi: aprire, inserire testo, copiare/spostare, incollare immagine schermo, salvare</li>
-              <li>Gestione stampanti: installare, impostare predefinita, stampare, gestire coda di stampa</li>
-            </ul>
-          </div>
+          <p class="prose prose-invert">Elaborazione testi e gestione stampa.</p>
+          <h3 class="text-xl font-bold mb-4">Flashcards - Modulo 3</h3>
+          <div id="flashcards-3" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </div>
 
         <div id="module-4" class="module-content">
           <h2 class="text-3xl font-bold mb-6">4. Gestione di file</h2>
-          <div class="prose prose-invert">
-            <ul>
-              <li>Struttura gerarchica: unità → cartelle → file</li>
-              <li>Creare, rinominare, copiare, spostare, eliminare file/cartelle</li>
-              <li>Visualizzare proprietà, cambiare visualizzazione (icone, lista, dettagli)</li>
-              <li>Tipi di file comuni (.txt, .docx, .xlsx, .pdf, .jpg, .zip, ecc.)</li>
-              <li>Ricerca file per nome, contenuto, data</li>
-              <li>Comprimere ed estrarre file</li>
-              <li>Supporti di memoria: KB, MB, GB, TB</li>
-            </ul>
-          </div>
+          <p class="prose prose-invert">Organizzazione file e cartelle, compressione.</p>
+          <h3 class="text-xl font-bold mb-4">Flashcards - Modulo 4</h3>
+          <div id="flashcards-4" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </div>
 
         <div id="module-5" class="module-content">
           <h2 class="text-3xl font-bold mb-6">5. Reti</h2>
-          <div class="prose prose-invert">
-            <ul>
-              <li>Concetto di rete: condividere dati e dispositivi in sicurezza</li>
-              <li>Internet, intranet, VPN</li>
-              <li>Connessioni: linea telefonica, mobile, cavo, Wi-Fi, satellite</li>
-              <li>ISP (provider), velocità di download/upload</li>
-              <li>Reti wireless protette vs aperte</li>
-            </ul>
-          </div>
+          <p class="prose prose-invert">Internet, connessioni, Wi-Fi.</p>
+          <h3 class="text-xl font-bold mb-4">Flashcards - Modulo 5</h3>
+          <div id="flashcards-5" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </div>
 
         <div id="module-6" class="module-content">
           <h2 class="text-3xl font-bold mb-6">6. Sicurezza e benessere</h2>
-          <div class="prose prose-invert">
-            <ul>
-              <li>Password forti, firewall, aggiornamenti software, backup</li>
-              <li>Malware: virus, worm, trojan, spyware – usare antivirus</li>
-              <li>Salute: pause regolari, postura corretta, illuminazione giusta</li>
-              <li>Informatica verde: risparmio energetico, riciclo</li>
-              <li>Accessibilità: zoom, screen reader, contrasto elevato</li>
-            </ul>
-          </div>
+          <p class="prose prose-invert">Password, malware, salute, informatica verde.</p>
+          <h3 class="text-xl font-bold mb-4">Flashcards - Modulo 6</h3>
+          <div id="flashcards-6" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
         </div>
 
       </div>
@@ -151,6 +129,68 @@
       document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
       document.querySelectorAll('.nav-link')[n].classList.add('active');
     }
+
+    // Flashcards Data
+    const flashcards = {
+      1: [
+        {q: "Cosa significa ICT?", a: "Information and Communication Technology (Tecnologie dell’Informazione e della Comunicazione)"},
+        {q: "Cos'è la RAM?", a: "Memoria temporanea del computer (si cancella quando spegni)"},
+        {q: "Differenza tra RAM e memoria di massa?", a: "RAM è volatile, memoria di massa è permanente"},
+        {q: "Cos'è l'hardware?", a: "Le parti fisiche del computer (tastiera, schermo, processore...)"},
+      ],
+      2: [
+        {q: "A cosa serve il tasto Esc?", a: "Interrompere un'operazione o annullare una scelta"},
+        {q: "Cosa fa il tasto Print Screen?", a: "Cattura l'immagine dello schermo"},
+        {q: "Come si chiude un programma bloccato?", a: "Dal Task Manager o Gestione Attività"},
+      ],
+      3: [
+        {q: "Come si salva un documento?", a: "File → Salva con nome (assegnare un nome significativo)"},
+        {q: "Come si imposta una stampante predefinita?", a: "Impostazioni → Dispositivi → Stampanti"},
+      ],
+      4: [
+        {q: "Cos'è un file .zip?", a: "File compresso"},
+        {q: "Come si cerca un file?", a: "Usando la barra di ricerca o Esplora File"},
+        {q: "Qual è la struttura dei file?", a: "Unità → Cartelle → Sottocartelle → File"},
+      ],
+      5: [
+        {q: "Cos'è un ISP?", a: "Internet Service Provider (fornitore di connessione Internet)"},
+        {q: "Cosa significa Wi-Fi protetto?", a: "Rete con password"},
+      ],
+      6: [
+        {q: "Cosa sono i malware?", a: "Virus, worm, trojan, spyware"},
+        {q: "Cosa fare per una password sicura?", a: "Lunga, con lettere, numeri e simboli"},
+        {q: "Cos'è il backup?", a: "Copia di sicurezza dei dati"},
+      ]
+    };
+
+    function createFlashcards(moduleId) {
+      const container = document.getElementById(`flashcards-${moduleId}`);
+      if (!container) return;
+      
+      flashcards[moduleId].forEach(card => {
+        const div = document.createElement('div');
+        div.className = 'flashcard bg-gray-800 border border-gray-700 rounded-2xl p-6';
+        div.innerHTML = `
+          <div class="flashcard-inner h-40 relative">
+            <div class="flashcard-front absolute inset-0 flex items-center justify-center text-center p-4 bg-gray-800 rounded-2xl">
+              <p class="text-base">${card.q}</p>
+            </div>
+            <div class="flashcard-back absolute inset-0 flex items-center justify-center text-center p-4 bg-cyan-900 rounded-2xl">
+              <p class="text-cyan-100">${card.a}</p>
+            </div>
+          </div>
+        `;
+        div.addEventListener('click', () => div.classList.toggle('flipped'));
+        container.appendChild(div);
+      });
+    }
+
+    // Create flashcards for all modules
+    window.onload = () => {
+      for (let i = 1; i <= 6; i++) {
+        createFlashcards(i);
+      }
+    };
   </script>
 </body>
 </html>
