@@ -1,113 +1,194 @@
+```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Julia - ICDL Computer Essentials</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <style>
-    body { font-family: 'Segoe UI', system-ui, sans-serif; }
-    .module-content { display: none; }
-    .module-content.active { display: block; }
-    .nav-link { transition: all 0.2s; }
-    .nav-link.active { background-color: #164e63; color: white; border-left: 4px solid #67e8f9; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Julia - ICDL Computer Essentials</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body class="bg-gray-950 text-gray-100 min-h-screen">
 
-  <div class="flex h-screen">
-    <!-- Sidebar -->
-    <div class="w-72 bg-gray-900 border-r border-gray-700 p-6 overflow-y-auto">
-      <h1 class="text-2xl font-bold text-cyan-400 mb-8">Julia's ICDL</h1>
-      
-      <nav class="space-y-1">
-        <a href="#" onclick="showModule(0)" class="nav-link active block py-3 px-4 rounded-lg text-sm">🏠 Home</a>
-        <a href="#" onclick="showModule(1)" class="nav-link block py-3 px-4 rounded-lg text-sm">1. Computer e dispositivi</a>
-        <a href="#" onclick="showModule(2)" class="nav-link block py-3 px-4 rounded-lg text-sm">2. Desktop, icone, impostazioni</a>
-        <a href="#" onclick="showModule(3)" class="nav-link block py-3 px-4 rounded-lg text-sm">3. Testi e stampe</a>
-        <a href="#" onclick="showModule(4)" class="nav-link block py-3 px-4 rounded-lg text-sm">4. Gestione di file</a>
-        <a href="#" onclick="showModule(5)" class="nav-link block py-3 px-4 rounded-lg text-sm">5. Reti</a>
-        <a href="#" onclick="showModule(6)" class="nav-link block py-3 px-4 rounded-lg text-sm">6. Sicurezza e benessere</a>
-      </nav>
-    </div>
+<div class="flex h-screen">
 
-    <!-- Main Content -->
-    <div class="flex-1 overflow-y-auto p-10">
-      <div class="max-w-3xl mx-auto">
+<div class="w-72 bg-gray-900 border-r border-gray-700 p-6 overflow-y-auto">
 
-        <div id="module-0" class="module-content active">
-          <h1 class="text-4xl font-bold mb-4">Ciao Julia 👋</h1>
-          <p class="text-cyan-400 text-xl">ICDL Computer Essentials</p>
-          <p class="mt-8 text-gray-300">Materiale organizzato dal manuale. Studia un modulo alla volta.</p>
-        </div>
+<h1 class="text-2xl font-bold text-cyan-400 mb-8">
+Julia's ICDL
+</h1>
 
-        <div id="module-1" class="module-content">
-          <h2 class="text-3xl font-bold mb-6">1. Computer e dispositivi</h2>
-          <div class="prose prose-invert space-y-6">
-            <div>
-              <h3 class="font-semibold">1.1 ICT</h3>
-              <p>Tecnologie dell’Informazione e della Comunicazione.<br>Esempi: e-commerce, e-banking, e-government, e-learning, smart working.</p>
-            </div>
-            <div>
-              <h3 class="font-semibold">1.2 Hardware</h3>
-              <ul>
-                <li>Desktop, Laptop, Tablet</li>
-                <li>Processore (CPU), RAM, Memoria di massa</li>
-                <li>Periferiche: tastiera, mouse, stampante, schermo, scanner, webcam, altoparlanti, microfono</li>
-                <li>Porte: USB, HDMI, Ethernet</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+<nav class="space-y-1">
 
-        <div id="module-2" class="module-content">
-          <h2 class="text-3xl font-bold mb-6">2. Desktop, icone, impostazioni</h2>
-          <div class="prose prose-invert">
-            <p>Desktop, barra delle applicazioni, gestione icone e finestre, impostazioni di sistema, installazione/disinstallazione programmi, collegamento dispositivi USB.</p>
-          </div>
-        </div>
+<a href="#" onclick="showModule(0)"
+class="nav-link active block py-3 px-4 rounded-lg">
+🏠 Home
+</a>
 
-        <div id="module-3" class="module-content">
-          <h2 class="text-3xl font-bold mb-6">3. Testi e stampe</h2>
-          <div class="prose prose-invert">
-            <p>Elaborazione testi (scrivere, copiare, salvare), installazione stampante, stampa documenti, gestione coda di stampa.</p>
-          </div>
-        </div>
+<a href="#" onclick="showModule(1)"
+class="nav-link block py-3 px-4 rounded-lg">
+1. Computer e dispositivi
+</a>
 
-        <div id="module-4" class="module-content">
-          <h2 class="text-3xl font-bold mb-6">4. Gestione di file</h2>
-          <div class="prose prose-invert">
-            <p>Struttura gerarchica di file e cartelle, creare/rinominare/copiare/spostare/eliminate, ricerca file, compressione, tipi di memoria.</p>
-          </div>
-        </div>
+<a href="#" onclick="showModule(2)"
+class="nav-link block py-3 px-4 rounded-lg">
+2. Desktop
+</a>
 
-        <div id="module-5" class="module-content">
-          <h2 class="text-3xl font-bold mb-6">5. Reti</h2>
-          <div class="prose prose-invert">
-            <p>Rete, Internet, Wi-Fi, provider, velocità di trasferimento, reti protette vs aperte.</p>
-          </div>
-        </div>
+<a href="#" onclick="showModule(3)"
+class="nav-link block py-3 px-4 rounded-lg">
+3. Testi
+</a>
 
-        <div id="module-6" class="module-content">
-          <h2 class="text-3xl font-bold mb-6">6. Sicurezza e benessere</h2>
-          <div class="prose prose-invert">
-            <p>Password sicure, firewall, backup, malware, salute (postura, pause), informatica verde, accessibilità.</p>
-          </div>
-        </div>
+<a href="#" onclick="showModule(4)"
+class="nav-link block py-3 px-4 rounded-lg">
+4. File
+</a>
 
-      </div>
-    </div>
-  </div>
+<a href="#" onclick="showModule(5)"
+class="nav-link block py-3 px-4 rounded-lg">
+5. Reti
+</a>
 
-  <script>
-    function showModule(n) {
-      document.querySelectorAll('.module-content').forEach(el => el.classList.remove('active'));
-      document.getElementById('module-' + n).classList.add('active');
+<a href="#" onclick="showModule(6)"
+class="nav-link block py-3 px-4 rounded-lg">
+6. Sicurezza
+</a>
 
-      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-      document.querySelectorAll('.nav-link')[n].classList.add('active');
-    }
-  </script>
+<hr class="border-gray-700 my-4">
+
+<a href="#" onclick="showModule(7)"
+class="nav-link block py-3 px-4 rounded-lg">
+🃏 Flashcards
+</a>
+
+</nav>
+
+</div>
+
+<div class="flex-1 overflow-y-auto p-10">
+
+<div id="module-0" class="module-content active">
+<h1 class="text-4xl font-bold mb-5">
+Ciao Julia 👋
+</h1>
+
+<p class="text-cyan-400">
+Studia un modulo alla volta.
+</p>
+</div>
+
+<div id="module-1" class="module-content">
+<h2 class="text-3xl font-bold mb-4">
+Computer e dispositivi
+</h2>
+
+<ul class="space-y-2">
+<li>CPU</li>
+<li>RAM</li>
+<li>USB</li>
+<li>Monitor</li>
+</ul>
+</div>
+
+<div id="module-2" class="module-content">
+<h2 class="text-3xl font-bold">
+Desktop e impostazioni
+</h2>
+</div>
+
+<div id="module-3" class="module-content">
+<h2 class="text-3xl font-bold">
+Testi e stampe
+</h2>
+</div>
+
+<div id="module-4" class="module-content">
+<h2 class="text-3xl font-bold">
+Gestione file
+</h2>
+</div>
+
+<div id="module-5" class="module-content">
+<h2 class="text-3xl font-bold">
+Reti
+</h2>
+</div>
+
+<div id="module-6" class="module-content">
+<h2 class="text-3xl font-bold">
+Sicurezza
+</h2>
+</div>
+
+<div id="module-7" class="module-content">
+
+<h2 class="text-3xl font-bold mb-6">
+🃏 Flashcards
+</h2>
+
+<div class="space-y-6">
+
+<div class="flashcard">
+<div class="card-inner">
+
+<div class="card-front">
+Cos'è ICT?
+</div>
+
+<div class="card-back">
+Tecnologie dell’Informazione e Comunicazione
+</div>
+
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-inner">
+
+<div class="card-front">
+Cos'è la CPU?
+</div>
+
+<div class="card-back">
+Processore del computer
+</div>
+
+</div>
+</div>
+
+<div class="flashcard">
+<div class="card-inner">
+
+<div class="card-front">
+RAM?
+</div>
+
+<div class="card-back">
+Memoria temporanea
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
+```
