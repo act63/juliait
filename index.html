@@ -1,7 +1,6 @@
 ```html
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,26 +36,20 @@ border-left:4px solid #67e8f9;
 /* FLASHCARDS */
 
 .flashcard{
-position:relative;
-
 height:180px;
-
 cursor:pointer;
-
 perspective:1000px;
 }
 
 .flashcard-inner{
-
-position:relative;
-
 width:100%;
 height:100%;
 
+position:relative;
+
 transform-style:preserve-3d;
 
-transition:transform .7s;
-
+transition:.7s;
 }
 
 .flashcard.flipped .flashcard-inner{
@@ -72,19 +65,17 @@ inset:0;
 
 display:flex;
 
-align-items:center;
-
 justify-content:center;
 
-text-align:center;
+align-items:center;
 
 padding:20px;
 
-border-radius:18px;
+text-align:center;
+
+border-radius:16px;
 
 backface-visibility:hidden;
-
--webkit-backface-visibility:hidden;
 
 }
 
@@ -93,11 +84,9 @@ background:#1f2937;
 }
 
 .flashcard-back{
-
 background:#164e63;
 
 transform:rotateY(180deg);
-
 }
 
 </style>
@@ -110,7 +99,7 @@ transform:rotateY(180deg);
 
 <!-- SIDEBAR -->
 
-<div class="w-72 bg-gray-900 border-r border-gray-700 p-6">
+<div class="w-72 bg-gray-900 p-6 border-r border-gray-700">
 
 <h1 class="text-2xl font-bold text-cyan-400 mb-8">
 Julia's ICDL
@@ -134,58 +123,118 @@ class="nav-link block p-3 rounded">
 
 </a>
 
-<a href="#"
-onclick="showModule(6)"
-class="nav-link block p-3 rounded">
-
-6. Sicurezza
-
-</a>
-
 </nav>
 
 </div>
 
 <!-- CONTENT -->
 
-<div class="flex-1 p-10 overflow-auto">
+<div class="flex-1 overflow-y-auto p-10">
 
 <div class="max-w-4xl mx-auto">
+
+<!-- HOME -->
 
 <div
 id="module-0"
 class="module-content active">
 
-<h1 class="text-5xl font-bold mb-4">
+<h1 class="text-5xl font-bold mb-5">
 
 Ciao Julia 👋
 
 </h1>
 
-<p class="text-cyan-400">
+<p class="text-cyan-400 text-xl">
 
 ICDL Computer Essentials
 
 </p>
 
+<p class="mt-6 text-gray-400">
+
+Apri il modulo per studiare e usare le flashcards.
+
+</p>
+
 </div>
 
-<!-- MODULE 1 -->
+<!-- MODULE -->
 
 <div
 id="module-1"
 class="module-content">
 
-<h2 class="text-3xl font-bold mb-6">
+<h2 class="text-4xl font-bold mb-8">
 
-Computer e dispositivi
+1. Computer e dispositivi
 
 </h2>
 
-<div class="grid gap-5">
+<div class="space-y-8 mb-10">
 
-<div
-class="flashcard border border-gray-700 rounded-xl">
+<div>
+
+<h3 class="text-cyan-400 text-xl mb-3">
+
+1.1 ICT
+
+</h3>
+
+<p class="text-gray-300">
+
+Tecnologie dell’Informazione e della Comunicazione.
+
+</p>
+
+<p class="text-gray-400">
+
+Esempi:
+e-learning,
+e-banking,
+smart working.
+
+</p>
+
+</div>
+
+<div>
+
+<h3 class="text-cyan-400 text-xl mb-3">
+
+1.2 Hardware
+
+</h3>
+
+<ul class="list-disc ml-6 text-gray-300">
+
+<li>CPU</li>
+
+<li>RAM</li>
+
+<li>SSD</li>
+
+<li>Monitor</li>
+
+<li>Tastiera</li>
+
+<li>Mouse</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<h3 class="text-2xl font-bold mb-6">
+
+🃏 Flashcards
+
+</h3>
+
+<div class="grid md:grid-cols-2 gap-5">
+
+<div class="flashcard border border-gray-700 rounded-xl">
 
 <div class="flashcard-inner">
 
@@ -205,8 +254,7 @@ Tecnologie dell’Informazione e Comunicazione
 
 </div>
 
-<div
-class="flashcard border border-gray-700 rounded-xl">
+<div class="flashcard border border-gray-700 rounded-xl">
 
 <div class="flashcard-inner">
 
@@ -226,8 +274,7 @@ Memoria temporanea
 
 </div>
 
-<div
-class="flashcard border border-gray-700 rounded-xl">
+<div class="flashcard border border-gray-700 rounded-xl">
 
 <div class="flashcard-inner">
 
@@ -247,59 +294,19 @@ Componenti fisici del computer
 
 </div>
 
-</div>
-
-</div>
-
-<!-- MODULE 6 -->
-
-<div
-id="module-6"
-class="module-content">
-
-<h2 class="text-3xl font-bold mb-6">
-
-Sicurezza
-
-</h2>
-
-<div class="grid gap-5">
-
-<div
-class="flashcard border border-gray-700 rounded-xl">
+<div class="flashcard border border-gray-700 rounded-xl">
 
 <div class="flashcard-inner">
 
 <div class="flashcard-front">
 
-Cos'è un firewall?
+Cos'è CPU?
 
 </div>
 
 <div class="flashcard-back">
 
-Blocca accessi non autorizzati
-
-</div>
-
-</div>
-
-</div>
-
-<div
-class="flashcard border border-gray-700 rounded-xl">
-
-<div class="flashcard-inner">
-
-<div class="flashcard-front">
-
-Cos'è backup?
-
-</div>
-
-<div class="flashcard-back">
-
-Copia di sicurezza
+Il processore del computer
 
 </div>
 
@@ -323,8 +330,9 @@ function showModule(n){
 
 document
 .querySelectorAll(".module-content")
-.forEach(el=>
-el.classList.remove("active"));
+.forEach(
+el=>el.classList.remove("active")
+);
 
 document
 .getElementById(
@@ -336,36 +344,27 @@ document
 
 document
 .querySelectorAll(".nav-link")
-.forEach(el=>
-el.classList.remove(
-"active"
-));
+.forEach(
+el=>el.classList.remove("active")
+);
 
 document
 .querySelectorAll(".nav-link")[n]
 .classList.add(
-"active"
-);
+"active");
 
 }
 
 document
-.querySelectorAll(
-".flashcard"
-)
+.querySelectorAll(".flashcard")
 .forEach(card=>{
 
-card
-.addEventListener(
+card.addEventListener(
 "click",
 ()=>{
-
-card
-.classList
-.toggle(
+card.classList.toggle(
 "flipped"
 );
-
 });
 
 });
